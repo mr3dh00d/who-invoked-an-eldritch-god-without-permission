@@ -10,10 +10,10 @@ Este repositorio contiene el código fuente y los recursos para el proyecto "Pro
 
 ## Equipo
 
-- Franco Montiel
-- Derekc Pavez
-- Javiera Toro
-- Josefa Toro
+- Franco Montiel ([iFrankMT](https://github.com/iFrankMT))
+- Derekc Pavez ([mr3dh00d](https://github.com/mr3dh00d))
+- Javiera Toro ([Kopfsalaat](https://github.com/Kopfsalaat))
+- Josefa Toro ([Kartoffelux](https://github.com/Kartoffelux))
 
 ## Descripción del Juego
 

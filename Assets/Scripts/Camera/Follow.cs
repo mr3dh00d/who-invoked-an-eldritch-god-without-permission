@@ -11,18 +11,7 @@ public class Follow : MonoBehaviour
     float maxX = 8.18f;
     float minY = -3.21f;
     float maxY = 7.59f; // Límites del mapa
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     void LateUpdate()
     {

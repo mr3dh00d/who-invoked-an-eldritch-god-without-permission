@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 59f0304b4c215604fa770f58ce19896c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: cc34d0f3dc257a442819830b408c5322, type: 3}
+  errors:
+  - 'Missing texture asset: ../../Mapa/base.png'
+  warnings: []
+  missingSortingLayers: []
+  missingLayers: []
+  pixelsPerUnit: 100
+  edgesPerEllipse: 32
+  useSpriteAtlas: 1
+  atlasWidth: 2048
+  atlasHeight: 2048

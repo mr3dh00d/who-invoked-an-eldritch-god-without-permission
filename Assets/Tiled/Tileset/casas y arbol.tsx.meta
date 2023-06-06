@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: dea3ba05994edca4f9e5c6536daadf94
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: cc34d0f3dc257a442819830b408c5322, type: 3}
+  errors:
+  - 'Missing texture asset: ../../Mapa/casas y arbol.png'
+  warnings: []
+  missingSortingLayers: []
+  missingLayers: []
+  pixelsPerUnit: 100
+  edgesPerEllipse: 32
+  useSpriteAtlas: 1
+  atlasWidth: 2048
+  atlasHeight: 2048

@@ -42,20 +42,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Base
-    uniqueID: 2829617747
-    locked: 0
   - name: Tierra
     uniqueID: 4265886931
+    locked: 0
+  - name: Base
+    uniqueID: 2829617747
     locked: 0
   - name: Puente
     uniqueID: 3710349701
     locked: 0
-  - name: Casas
-    uniqueID: 3555321331
-    locked: 0
   - name: Arboles
     uniqueID: 938661549
+    locked: 0
+  - name: Casas
+    uniqueID: 3555321331
     locked: 0
   - name: Jugador
     uniqueID: 3432484405

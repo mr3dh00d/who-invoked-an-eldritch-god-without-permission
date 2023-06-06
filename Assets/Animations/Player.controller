@@ -20,23 +20,23 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: bdaafec4e1b74164bad9dde48745328f, type: 2}
     m_Threshold: 0.33333334
     m_Position: {x: 0, y: -1}
+    m_TimeScale: -1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Horizontal
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 60fe43968d750274daee704b180b13df, type: 2}
+    m_Threshold: 0.6666667
+    m_Position: {x: 1, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 3f6dd4fbdbccccc448be2f13c6593bbb, type: 2}
-    m_Threshold: 0.6666667
-    m_Position: {x: -1, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Horizontal
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 60fe43968d750274daee704b180b13df, type: 2}
     m_Threshold: 1
-    m_Position: {x: 1, y: 0}
-    m_TimeScale: 1
+    m_Position: {x: -1, y: 0}
+    m_TimeScale: -1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
@@ -83,7 +83,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: Horizontal
+    m_ConditionEvent: Speed
     m_EventTreshold: 0.001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5526140786347695827}

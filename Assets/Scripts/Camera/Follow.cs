@@ -7,19 +7,27 @@ public class Follow : MonoBehaviour
     public GameObject player;
     Vector3 offset = new Vector3(0, 0, -10);
     float smoothSpeed = 0.125f;
-    float minX = -11.42f;
-    float maxX = 8.18f;
-    float minY = -3.21f;
-    float maxY = 7.59f; // Límites del mapa
+    // float minX = -11.42f;
+    // float maxX = 8.18f;
+    // float minY = -3.21f;
+    // float maxY = 7.59f; // Límites del mapa
     
-
+    void Start()
+    {
+        Debug.Log("Follow script is working");
+    }
     void LateUpdate()
     {
         Vector3 desiredPosition = player.transform.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        // smoothedPosition = new Vector3(
+        //     Mathf.Clamp(smoothedPosition.x, minX, maxX),
+        //     Mathf.Clamp(smoothedPosition.y, minY, maxY),
+        //     smoothedPosition.z
+        // );
         smoothedPosition = new Vector3(
-            Mathf.Clamp(smoothedPosition.x, minX, maxX),
-            Mathf.Clamp(smoothedPosition.y, minY, maxY),
+            smoothedPosition.x,
+            smoothedPosition.y,
             smoothedPosition.z
         );
         transform.position = smoothedPosition;

@@ -11,7 +11,7 @@ public class Mercader : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Image dialogueImage;
     [SerializeField, TextArea(4,6)] private string[] dialogueLines;
-    private float typingSpeed = 0.05f;
+    [SerializeField] private float typingSpeed = 0.03f;
     private bool isPlayerInRange;
     private bool isDialogueActive;
     private bool didDialogueStarted;

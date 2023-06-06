@@ -45,3 +45,6 @@ TagManager:
   - name: Jugador
     uniqueID: 3432484405
     locked: 0
+  - name: GUI
+    uniqueID: 2858824575
+    locked: 0

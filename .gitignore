@@ -76,3 +76,6 @@ crashlytics-build.properties
 .vscode/
 .vsconfig
 .fake
+
+*.pdf
+*.meta.pdf

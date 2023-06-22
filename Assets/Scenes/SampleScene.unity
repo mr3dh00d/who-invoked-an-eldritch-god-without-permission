@@ -20060,6 +20060,10 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[195].m_ColliderPaths.Array.data[0].Array.data[4].Y
       value: -8994141
       objectReference: {fileID: 0}
+    - target: {fileID: 553576855365649775, guid: 85196e34e6e480d49b4f1bb07974422c, type: 3}
+      propertyPath: m_Properties.Array.data[0].m_Value
+      value: Base
+      objectReference: {fileID: 0}
     - target: {fileID: 2246311329189708164, guid: 85196e34e6e480d49b4f1bb07974422c, type: 3}
       propertyPath: m_Name
       value: Mapa

@@ -12,6 +12,7 @@ public class Mercader : MonoBehaviour
     [SerializeField] private Image dialogueImage;
     [SerializeField, TextArea(4,6)] private string[] dialogueLines;
     [SerializeField] private float typingSpeed = 0.03f;
+    private GameObject player;
     private bool isPlayerInRange;
     private bool isDialogueActive;
     private bool didDialogueStarted;
@@ -59,6 +60,7 @@ public class Mercader : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            player = collision.gameObject;
             isDialogueActive = true;
             isPlayerInRange = true;
             actionMark.SetActive(true);
@@ -83,7 +85,8 @@ public class Mercader : MonoBehaviour
         dialoguePanel.SetActive(true);
         actionMark.SetActive(false);
         lineIndex = 0;
-        Time.timeScale = 0f;
+        player.GetComponent<Movement>().enabled = false;
+        // Time.timeScale = 0f;
         StartCoroutine(ShowLine());
         // dialogueText.text = dialogueLines[0];
     }
@@ -101,7 +104,8 @@ public class Mercader : MonoBehaviour
             isDialogueActive = false;
             dialoguePanel.SetActive(false);
             didDialogueStarted = false;
-            Time.timeScale = 1f;
+            player.GetComponent<Movement>().enabled = true;
+            // Time.timeScale = 1f;
         }
     }
     private IEnumerator ShowLine()

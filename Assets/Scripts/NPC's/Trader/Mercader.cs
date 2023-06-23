@@ -86,7 +86,6 @@ public class Mercader : MonoBehaviour
         actionMark.SetActive(false);
         lineIndex = 0;
         player.GetComponent<Movement>().enabled = false;
-        // Time.timeScale = 0f;
         StartCoroutine(ShowLine());
         // dialogueText.text = dialogueLines[0];
     }
@@ -105,7 +104,6 @@ public class Mercader : MonoBehaviour
             dialoguePanel.SetActive(false);
             didDialogueStarted = false;
             player.GetComponent<Movement>().enabled = true;
-            // Time.timeScale = 1f;
         }
     }
     private IEnumerator ShowLine()

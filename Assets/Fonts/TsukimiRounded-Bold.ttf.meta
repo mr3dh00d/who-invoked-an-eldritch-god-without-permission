@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9c77ddde72d025841b90a18867fac605
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Tsukimi Rounded
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3212e754625800945868d3eb7361dfe1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 04fe49875eda6364b84aeced6f4bb414
+guid: 536e3f1b64780fa4eab90368fd354368
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -8,7 +8,11 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: cc34d0f3dc257a442819830b408c5322, type: 3}
-  errors: []
+  errors:
+  - Unknown error encountered. Please report as bug. Stack track is in the console
+    output.
+  - 'Texture2D.GetPixels: the size of data to be written to would result in writing
+    outside the target buffer bounds. (Texture '''')'
   warnings: []
   missingSortingLayers: []
   missingLayers: []

@@ -42,21 +42,102 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Base
+  - name: Pasto
     uniqueID: 2829617747
     locked: 0
-  - name: Tierra
-    uniqueID: 4265886931
+  - name: Camino
+    uniqueID: 1555757681
+    locked: 0
+  - name: Arena
+    uniqueID: 3577774573
+    locked: 0
+  - name: Agua
+    uniqueID: 1216947743
+    locked: 0
+  - name: Relieve
+    uniqueID: 1652153421
+    locked: 0
+  - name: Nenufar
+    uniqueID: 3587682073
+    locked: 0
+  - name: Cerca Atras Nueva y sola
+    uniqueID: 1876711349
+    locked: 0
+  - name: CercaVertical4
+    uniqueID: 2917998959
+    locked: 0
+  - name: CercaVertical3
+    uniqueID: 4108758661
+    locked: 0
+  - name: CercaVertical5
+    uniqueID: 218130691
+    locked: 0
+  - name: 'Arboles Grandes 1 Bosque '
+    uniqueID: 1815554013
+    locked: 0
+  - name: 'Arboles Chiquitos 2 Bosque '
+    uniqueID: 1631326079
+    locked: 0
+  - name: 'Arboles Grandes 3 Bosque '
+    uniqueID: 1746696149
+    locked: 0
+  - name: 'Arboles Grandes 2 Bosque '
+    uniqueID: 1915299193
+    locked: 0
+  - name: 'Arboles Chiquitos 1 Bosque '
+    uniqueID: 1936665799
+    locked: 0
+  - name: Arboles atras
+    uniqueID: 938661549
+    locked: 0
+  - name: Casas Frente
+    uniqueID: 3555321331
     locked: 0
   - name: Puente
     uniqueID: 3710349701
     locked: 0
+  - name: Arbusto
+    uniqueID: 4265886931
+    locked: 0
+  - name: Mercader Casa
+    uniqueID: 3823308011
+    locked: 0
+  - name: Cerca
+    uniqueID: 3868535713
+    locked: 0
+  - name: Mercader
+    uniqueID: 2897449183
+    locked: 0
   - name: Jugador
     uniqueID: 3432484405
     locked: 0
-  - name: Arboles
-    uniqueID: 938661549
+  - name: Cerca atras
+    uniqueID: 2942404327
     locked: 0
-  - name: Casas
-    uniqueID: 3555321331
+  - name: CercaVertical2
+    uniqueID: 2066991025
+    locked: 0
+  - name: CercaVertical1
+    uniqueID: 2229081891
+    locked: 0
+  - name: Arboles Adelante
+    uniqueID: 3816065577
+    locked: 0
+  - name: Casas espalda
+    uniqueID: 1775297055
+    locked: 0
+  - name: Arboles Grandes 1 Bosque Adelante
+    uniqueID: 2864402595
+    locked: 0
+  - name: Arboles Chiquitos 2 Bosque Adelante
+    uniqueID: 870945899
+    locked: 0
+  - name: Arboles Grandes 3 Bosque Adelante
+    uniqueID: 1933115685
+    locked: 0
+  - name: Arboles Grandes 2 Bosque Adelante
+    uniqueID: 3809614459
+    locked: 0
+  - name: Arboles Chiquitos 1 Bosque Adelante
+    uniqueID: 1151177247
     locked: 0

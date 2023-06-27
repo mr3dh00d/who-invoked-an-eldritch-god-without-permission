@@ -24,7 +24,7 @@ public class MoveSelect : MonoBehaviour
             if (Option > 1)
             {
                 Option--;
-                Position.y += 60;
+                Position.y += 50;
                 rectTransform.anchoredPosition = Position;
             }
         }
@@ -33,7 +33,7 @@ public class MoveSelect : MonoBehaviour
             if (Option < MaxOption)
             {
                 Option++;
-                Position.y -= 60;
+                Position.y -= 50;
                 rectTransform.anchoredPosition = Position;
             }
         }

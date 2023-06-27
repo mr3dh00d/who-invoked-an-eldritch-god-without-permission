@@ -6,6 +6,7 @@ using UnityEngine;
 public class Fighter : MonoBehaviour
 {
     public Stats stats;
+    public Attack[] attacks;
 
     public void Start() {
         stats.setStats(25, 10, 5, 1);
@@ -13,7 +14,7 @@ public class Fighter : MonoBehaviour
 
     public void Update() {
         if(Input.GetKeyDown("space")){
-            stats.setHealth(stats.getHealth() - 2f);
+            stats.setHealth(stats.getHealth() - Random.Range(0, 5));
         }
     }
 

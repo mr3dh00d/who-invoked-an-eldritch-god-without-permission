@@ -520,8 +520,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1717716895}
   - {fileID: 1471140277}
+  - {fileID: 1717716895}
   - {fileID: 773727411}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -3869,7 +3869,7 @@ GameObject:
   - component: {fileID: 773727411}
   - component: {fileID: 773727412}
   m_Layer: 0
-  m_Name: Villain (2)
+  m_Name: Kakashi 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3899,9 +3899,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 773727410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7624b1c9930cb14e8ad574bc313d095, type: 3}
+  m_Script: {fileID: 11500000, guid: ceef1e39dd827c64388695e71e0ad578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    statsPanel:
+      Slider: {fileID: 572945419}
+      Image: {fileID: 1818032089}
+      HealthLabel: {fileID: 500120041}
+      LevelLabel: {fileID: 700497116}
+  attacks: []
 --- !u!1 &797185154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5711,7 +5718,7 @@ GameObject:
   - component: {fileID: 1471140277}
   - component: {fileID: 1471140278}
   m_Layer: 0
-  m_Name: Villain (1)
+  m_Name: Kakashi 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5730,7 +5737,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 175100559}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1471140278
 MonoBehaviour:
@@ -5741,9 +5748,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1471140276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7624b1c9930cb14e8ad574bc313d095, type: 3}
+  m_Script: {fileID: 11500000, guid: ceef1e39dd827c64388695e71e0ad578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    statsPanel:
+      Slider: {fileID: 1520669691}
+      Image: {fileID: 422828192}
+      HealthLabel: {fileID: 441227077}
+      LevelLabel: {fileID: 198913057}
+  attacks: []
 --- !u!1 &1482172051
 GameObject:
   m_ObjectHideFlags: 0
@@ -6668,7 +6682,16 @@ MonoBehaviour:
   - {fileID: 447187436}
   - {fileID: 1521504822}
   villains:
-  - {fileID: 0}
+  - {fileID: 1471140278}
+  - {fileID: 1717716896}
+  - {fileID: 773727412}
+  items:
+  - name: Larbas
+    effect: 5
+  - name: Posion
+    effect: 10
+  - name: Huevos
+    effect: -5
   actionsManager:
     actionsPanel: {fileID: 2113991165}
     actionSelected: 0
@@ -7092,7 +7115,7 @@ GameObject:
   - component: {fileID: 1717716895}
   - component: {fileID: 1717716896}
   m_Layer: 0
-  m_Name: Villain
+  m_Name: Kakashi 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7111,7 +7134,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 175100559}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1717716896
 MonoBehaviour:
@@ -7122,9 +7145,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1717716894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7624b1c9930cb14e8ad574bc313d095, type: 3}
+  m_Script: {fileID: 11500000, guid: ceef1e39dd827c64388695e71e0ad578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    statsPanel:
+      Slider: {fileID: 271102257}
+      Image: {fileID: 1042436826}
+      HealthLabel: {fileID: 1075651762}
+      LevelLabel: {fileID: 540324063}
+  attacks: []
 --- !u!1 &1722952278
 GameObject:
   m_ObjectHideFlags: 0

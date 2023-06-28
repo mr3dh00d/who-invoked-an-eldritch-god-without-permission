@@ -25,7 +25,7 @@ using UnityEngine;
 
     public void setHealth(float health)
     {
-        string color = CombatGlobales.healthGreen;
+        string color = ColorTypes.healthGreen;
         if (health > maxHealth)
         {
             currentHealth = maxHealth;
@@ -44,5 +44,15 @@ using UnityEngine;
     public float getHealth()
     {
         return currentHealth;
+    }
+
+    public float getAttack()
+    {
+        return attack;
+    }
+
+    public float getDefense()
+    {
+        return defense;
     }
 }

@@ -9,7 +9,6 @@ using TMPro;
     private float typingSpeed = 0.03f;
     public GameObject messagesPanel;
     public MessageEvent messageEvent;
-
     private bool isTyping = false;
 
 

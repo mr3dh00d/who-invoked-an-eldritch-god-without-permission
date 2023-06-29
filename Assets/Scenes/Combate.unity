@@ -345,7 +345,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1741883745}
   m_HandleRect: {fileID: 0}
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kakashi 3
+  m_text: TikiTiki
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ce1076dbebda444e91be9343b0666ae, type: 2}
   m_sharedMaterial: {fileID: 1543662417097534646, guid: 1ce1076dbebda444e91be9343b0666ae, type: 2}
@@ -567,20 +567,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 183223338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceef1e39dd827c64388695e71e0ad578, type: 3}
+  m_Script: {fileID: 11500000, guid: b4a2b5b22cc21f741a3259dc30d3a001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    level: 3
     statsPanel:
       Slider: {fileID: 1357545978}
       Image: {fileID: 1782901226}
       HealthLabel: {fileID: 1187706000}
       LevelLabel: {fileID: 1202312080}
-  attacks:
-  - name: Hoja afilada
-    phrase: Uso hoja afilada
-    damage: 10
-    maxUses: 0
+  attacks: []
 --- !u!1 &186856419
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +867,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 626422453}
   m_HandleRect: {fileID: 0}
@@ -1365,7 +1362,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 885398624}
   m_HandleRect: {fileID: 0}
@@ -2259,10 +2256,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 447187434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceef1e39dd827c64388695e71e0ad578, type: 3}
+  m_Script: {fileID: 11500000, guid: b4a2b5b22cc21f741a3259dc30d3a001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    level: 3
     statsPanel:
       Slider: {fileID: 2019488682}
       Image: {fileID: 488842360}
@@ -3039,7 +3037,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1629588067}
   m_HandleRect: {fileID: 0}
@@ -3494,7 +3492,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kakashi 2
+  m_text: Kokosho
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ce1076dbebda444e91be9343b0666ae, type: 2}
   m_sharedMaterial: {fileID: 1543662417097534646, guid: 1ce1076dbebda444e91be9343b0666ae, type: 2}
@@ -3869,7 +3867,7 @@ GameObject:
   - component: {fileID: 773727411}
   - component: {fileID: 773727412}
   m_Layer: 0
-  m_Name: Kakashi 3
+  m_Name: TikiTiki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3899,10 +3897,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 773727410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceef1e39dd827c64388695e71e0ad578, type: 3}
+  m_Script: {fileID: 11500000, guid: f9122604b2f271e44a41eda15c1424bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    level: 3
     statsPanel:
       Slider: {fileID: 572945419}
       Image: {fileID: 1818032089}
@@ -5479,7 +5478,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 445830331}
   m_HandleRect: {fileID: 0}
@@ -5718,7 +5717,7 @@ GameObject:
   - component: {fileID: 1471140277}
   - component: {fileID: 1471140278}
   m_Layer: 0
-  m_Name: Kakashi 1
+  m_Name: Kakashi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5748,10 +5747,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1471140276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceef1e39dd827c64388695e71e0ad578, type: 3}
+  m_Script: {fileID: 11500000, guid: f9122604b2f271e44a41eda15c1424bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    level: 3
     statsPanel:
       Slider: {fileID: 1520669691}
       Image: {fileID: 422828192}
@@ -5912,7 +5912,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1907512231}
   m_HandleRect: {fileID: 0}
@@ -5965,10 +5965,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1521504820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceef1e39dd827c64388695e71e0ad578, type: 3}
+  m_Script: {fileID: 11500000, guid: b4a2b5b22cc21f741a3259dc30d3a001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    level: 3
     statsPanel:
       Slider: {fileID: 205806017}
       Image: {fileID: 1043007627}
@@ -6109,7 +6110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kakashi 1
+  m_text: Kakashi
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ce1076dbebda444e91be9343b0666ae, type: 2}
   m_sharedMaterial: {fileID: 1543662417097534646, guid: 1ce1076dbebda444e91be9343b0666ae, type: 2}
@@ -6678,9 +6679,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroes:
   - {fileID: 183223340}
-  - {fileID: 2065295261}
   - {fileID: 447187436}
   - {fileID: 1521504822}
+  - {fileID: 2065295261}
   villains:
   - {fileID: 1471140278}
   - {fileID: 1717716896}
@@ -6688,10 +6689,18 @@ MonoBehaviour:
   items:
   - name: Larbas
     effect: 5
+  - name: Larbas
+    effect: 5
+  - name: Huevo
+    effect: -5
+  - name: Huevo
+    effect: -5
+  - name: Huevo
+    effect: 5
   - name: Posion
     effect: 10
-  - name: Huevos
-    effect: -5
+  - name: Posion
+    effect: 10
   actionsManager:
     actionsPanel: {fileID: 2113991165}
     actionSelected: 0
@@ -7115,7 +7124,7 @@ GameObject:
   - component: {fileID: 1717716895}
   - component: {fileID: 1717716896}
   m_Layer: 0
-  m_Name: Kakashi 2
+  m_Name: Kokosho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7145,10 +7154,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1717716894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceef1e39dd827c64388695e71e0ad578, type: 3}
+  m_Script: {fileID: 11500000, guid: f9122604b2f271e44a41eda15c1424bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    level: 3
     statsPanel:
       Slider: {fileID: 271102257}
       Image: {fileID: 1042436826}
@@ -8455,7 +8465,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1946795869}
   m_HandleRect: {fileID: 0}
@@ -8598,10 +8608,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2065295259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceef1e39dd827c64388695e71e0ad578, type: 3}
+  m_Script: {fileID: 11500000, guid: b4a2b5b22cc21f741a3259dc30d3a001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    level: 3
     statsPanel:
       Slider: {fileID: 65234981}
       Image: {fileID: 1692203306}

@@ -10,19 +10,33 @@ using TMPro;
     public GameObject messagesPanel;
     public MessageEvent messageEvent;
     private bool isTyping = false;
+    private string message;
 
 
-    public void sayBattleIntro()
+    public void sayBattleIntro(string intro = "Un grupo de enemigos ha aparecido!")
     {
-        displayMessage("Un grupo de enemigos ha aparecido!");
+        displayMessage(intro);
     }
 
     public void displayMessage(string message)
     {
         isTyping = true;
+        this.message = message;
         Helpers.FindChildWithName(messagesPanel, "Image").SetActive(false);
         messageEvent.StartCoroutine(ShowMessage(message));
 
+    }
+
+    public void skipMessage()
+    {
+        if (isTyping)
+        {
+            isTyping = false;
+            messageEvent.StopAllCoroutines();
+            TextMeshProUGUI label = messagesPanel.GetComponentInChildren<TextMeshProUGUI>();
+            label.text = message;
+            Helpers.FindChildWithName(messagesPanel, "Image").SetActive(true);
+        }
     }
 
     private IEnumerator ShowMessage(string message)

@@ -7,25 +7,20 @@ using UnityEngine;
 {
     private float currentHealth;
     private float maxHealth;
-    private float attack;
     private float defense;
-    private int level;
+    [SerializeField] public int level;
     public StatsPanel statsPanel;
-
-    public void setStats(float maxHealth, float attack, float defense, int level)
+    public void setStats(float maxHealth, float defense, int level)
     {
         this.maxHealth = maxHealth;
-        this.attack = attack;
         this.defense = defense;
         this.level = level;
         currentHealth = maxHealth;
         statsPanel.setLevelUI(level);
         statsPanel.setHealthUI(currentHealth, maxHealth);
     }
-
     public void setHealth(float health)
     {
-        string color = ColorTypes.healthGreen;
         if (health > maxHealth)
         {
             currentHealth = maxHealth;
@@ -40,17 +35,10 @@ using UnityEngine;
         }
         statsPanel.setHealthUI(currentHealth, maxHealth);
     }
-
     public float getHealth()
     {
         return currentHealth;
     }
-
-    public float getAttack()
-    {
-        return attack;
-    }
-
     public float getDefense()
     {
         return defense;

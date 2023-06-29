@@ -6,13 +6,8 @@ using UnityEngine;
 public class Fighter : MonoBehaviour
 {
     public Stats stats;
-    public Attack[] attacks;
-
+    public List<Attack> attacks;
     private bool isDefending = false;
-
-    public void Start() {
-        stats.setStats(25, 5, 3, 1);
-    }
 
     public void Update() {
         if(Input.GetKeyDown("space")){
@@ -20,23 +15,33 @@ public class Fighter : MonoBehaviour
         }
     }
 
-    public float getAttack()
-    {
-        return stats.getAttack();
-    }
+    // public float getAttack()
+    // {
+    //     return 0f;
+    // }
 
-    public void takeDamage(float damage)
+    public float takeDamage(float damage)
     {
         if (isDefending)
         {
-            damage = damage / 2;
+            damage = Mathf.Round(damage - stats.getDefense());
+            if (damage < 0f)
+            {
+                damage = 0f;
+            }
         }
         stats.setHealth(stats.getHealth() - damage);
+        return damage;
     }
 
     public void setIsDefending(bool isDefending)
     {
         this.isDefending = isDefending;
+    }
+
+    public bool getIsDefending()
+    {
+        return isDefending;
     }
 
 }

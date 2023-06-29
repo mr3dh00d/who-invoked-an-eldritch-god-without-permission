@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: 28908c0cc78982644ad5ed6cda84bd4d
+  - enabled: 1
     path: Assets/Scenes/Polliton.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Bosque del Trotamundos.unity
+    guid: 7cc09fc8a9541e74283279118a452658
+  - enabled: 1
+    path: Assets/Scenes/Tierra Calcinada.unity
+    guid: fed0404ef8e3e9f4a85b0b536aa449c5
+  - enabled: 1
+    path: Assets/Scenes/Monte Ashara Cueva.unity
+    guid: 72e80f9e1d5ae2e4da9579ca35b7d4c9
   m_configObjects: {}

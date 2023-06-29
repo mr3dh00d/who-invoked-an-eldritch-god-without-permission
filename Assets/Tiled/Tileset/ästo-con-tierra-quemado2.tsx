@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tileset version="1.10" tiledversion="1.10.1" name="ästo-con-tierra-quemado2" tilewidth="100" tileheight="100" tilecount="49" columns="7">
+ <image source="../Imagenes/ästo-con-tierra-quemado2.png" width="700" height="700"/>
+</tileset>

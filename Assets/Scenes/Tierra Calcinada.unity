@@ -441,10 +441,8 @@ GameObject:
   m_Component:
   - component: {fileID: 221868678}
   - component: {fileID: 221868677}
-  - component: {fileID: 221868676}
   - component: {fileID: 221868675}
   - component: {fileID: 221868674}
-  - component: {fileID: 221868673}
   m_Layer: 0
   m_Name: Informante
   m_TagString: Untagged
@@ -452,18 +450,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &221868673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 221868672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09faeac6f40530b4c939d0ed02fbba70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &221868674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -516,18 +502,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.5064845, y: 2.752073}
   m_EdgeRadius: 0
---- !u!114 &221868676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 221868672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09faeac6f40530b4c939d0ed02fbba70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &221868677
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27990,7 +27964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512146430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2049723, y: 0.51938343, z: -10}
+  m_LocalPosition: {x: -2.6192846, y: 0.519547, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

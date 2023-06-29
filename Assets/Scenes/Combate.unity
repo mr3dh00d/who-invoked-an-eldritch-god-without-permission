@@ -571,7 +571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    level: 3
+    level: 1
     statsPanel:
       Slider: {fileID: 1357545978}
       Image: {fileID: 1782901226}
@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 202710329}
   - component: {fileID: 202710332}
   - component: {fileID: 202710331}
-  - component: {fileID: 202710330}
+  - component: {fileID: 202710333}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -828,27 +828,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 62.781}
   m_SizeDelta: {x: 274.4343, y: 274.4373}
   m_Pivot: {x: 0.5, y: 0.50000024}
---- !u!95 &202710330
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202710328}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 89ce64251051e0847aa28e9af6d6b261, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &202710331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -887,6 +866,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202710328}
   m_CullTransparentMesh: 1
+--- !u!95 &202710333
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202710328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 89ce64251051e0847aa28e9af6d6b261, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &205806017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,7 +1414,7 @@ RectTransform:
   - {fileID: 1529288465}
   - {fileID: 1985832093}
   m_Father: {fileID: 1415142980}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -2358,7 +2358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    level: 3
+    level: 1
     statsPanel:
       Slider: {fileID: 2019488682}
       Image: {fileID: 488842360}
@@ -3999,10 +3999,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    level: 3
+    level: 1
     statsPanel:
       Slider: {fileID: 572945419}
-      Image: {fileID: 1818032089}
+      Image: {fileID: 202710331}
       HealthLabel: {fileID: 500120041}
       LevelLabel: {fileID: 700497116}
   attacks: []
@@ -5655,8 +5655,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1674292732}
   - {fileID: 271102258}
+  - {fileID: 1674292732}
   - {fileID: 1075651761}
   - {fileID: 540324062}
   - {fileID: 596445485}
@@ -5751,7 +5751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    level: 3
+    level: 1
     statsPanel:
       Slider: {fileID: 1520669691}
       Image: {fileID: 422828192}
@@ -5969,7 +5969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    level: 3
+    level: 1
     statsPanel:
       Slider: {fileID: 205806017}
       Image: {fileID: 1043007627}
@@ -6818,7 +6818,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1415142980}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7221,7 +7221,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1717716895}
   - component: {fileID: 1717716896}
-  - component: {fileID: 1717716897}
   m_Layer: 0
   m_Name: Kokosho
   m_TagString: Untagged
@@ -7256,6 +7255,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9122604b2f271e44a41eda15c1424bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    level: 1
+    statsPanel:
+      Slider: {fileID: 271102257}
+      Image: {fileID: 1674292734}
+      HealthLabel: {fileID: 1075651762}
+      LevelLabel: {fileID: 540324063}
+  attacks: []
 --- !u!1 &1722952278
 GameObject:
   m_ObjectHideFlags: 0
@@ -8605,7 +8612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    level: 3
+    level: 1
     statsPanel:
       Slider: {fileID: 65234981}
       Image: {fileID: 1692203306}

@@ -7,7 +7,7 @@ public class Enemy : Fighter
     public void Start()
     {
         base.attacks.Add(
-            new Attack(AttackTypes.basic, 7, Mathf.Infinity, 1)
+            new Attack("Picotazo", 7, Mathf.Infinity, 1)
         );
         setLevel(base.stats.level);
         
@@ -31,11 +31,11 @@ public class Enemy : Fighter
 
         if(level >= 2)
             base.attacks.Add(
-                new Attack("Oscuridad", 10, 3, 2)
+                new Attack("Placaje", 10, 3, 2)
             );
         if(level >= 3)
             base.attacks.Add(
-                new Attack("Intensa Oscuridad", 20, 3, 3)
+                new Attack("Brecha Oscura", 20, 3, 3)
             );
     }
     

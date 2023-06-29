@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
@@ -79,18 +80,20 @@ public class CombatManager : MonoBehaviour
                                 actions = new Queue<Action>();
                                 events = new Queue<string>();
                                 // Actions = new Dictionary<Fighter, Action>();
-                                heroesOptions = new List<Fighter>();
-                                foreach (Fighter hero in heroes)
-                                {
-                                    if(hero.stats.getHealth() > 0){
-                                        heroesOptions.Add(hero);
-                                    }
+                                heroesOptions = heroes.FindAll(hero => {
                                     if(hero.getIsDefending())
                                     {
                                         hero.setIsDefending(false);
                                     }
-                                }
-                                villainsOptions = villains.FindAll(villain => villain.stats.getHealth() > 0);
+                                    return hero.stats.getHealth() > 0;
+                                });
+                                villainsOptions = villains.FindAll(villain => {
+                                    Image image = villain.stats.statsPanel.Image;
+                                    if(image){
+                                        image.GetComponent<Animator>().SetBool("Turno", false);
+                                    }
+                                    return villain.stats.getHealth() > 0;
+                                });
                                 actionsManager.setActions(heroesOptions.ConvertAll(hero => $"Pollito {hero.name}").ToArray());
                                 GetComponent<ActionEvent>().enabled = true;
                             }
@@ -340,6 +343,13 @@ public class CombatManager : MonoBehaviour
                 {
                     action.attack.uses--;
                     events.Enqueue($"{action.attacker.name} ha usado {action.attack.name}.\nLe quedan {action.attack.uses} usos.");
+                }
+                if(action.attacker.GetType() == typeof(Enemy))
+                {
+                    Image image = action.attacker.stats.statsPanel.Image;
+                    if(image){
+                        image.GetComponent<Animator>().SetBool("Turno", true);
+                    }
                 }
                 break;
             case ActionTypes.defense:

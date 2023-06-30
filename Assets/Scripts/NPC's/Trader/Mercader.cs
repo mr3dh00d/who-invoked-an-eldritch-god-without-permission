@@ -7,6 +7,7 @@ public class Mercader : MonoBehaviour
 {
     [SerializeField] private GameObject actionMark;
     [SerializeField] private Sprite playerSprite;
+    [SerializeField] private Sprite NPCSprite;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Image dialogueImage;
@@ -18,13 +19,12 @@ public class Mercader : MonoBehaviour
     private bool didDialogueStarted;
     private int lineIndex;
     private Animator MercaderAnimation;
-    private Sprite mercaderSprite;
+    // private Sprite mercaderSprite;
     // Update is called once per frame
 
     void Start()
     {
         MercaderAnimation = GetComponent<Animator>();
-        mercaderSprite = GetComponent<SpriteRenderer>().sprite;
     }
 
     void Update()
@@ -64,7 +64,8 @@ public class Mercader : MonoBehaviour
             isDialogueActive = true;
             isPlayerInRange = true;
             actionMark.SetActive(true);
-            MercaderAnimation.SetBool("Active", true);
+            if(MercaderAnimation != null)
+                MercaderAnimation.SetBool("Active", true);
             Debug.Log("si se pudo burro");
         }
     }
@@ -74,18 +75,20 @@ public class Mercader : MonoBehaviour
         {
             isPlayerInRange = false;
             actionMark.SetActive(false);
-            MercaderAnimation.SetBool("Active", false);
+            if(MercaderAnimation != null)
+                MercaderAnimation.SetBool("Active", false);
             Debug.Log("te chingaste perro");
         }
     }
     private void StartDialogue()
     {
         didDialogueStarted = true;
-        dialogueImage.sprite = mercaderSprite;
+        dialogueImage.sprite = NPCSprite;
         dialoguePanel.SetActive(true);
         actionMark.SetActive(false);
         lineIndex = 0;
-        player.GetComponent<Movement>().enabled = false;
+        player.GetComponent<Movement>().DisableMovement();
+        player.GetComponent<Movement>().StopMovement();
         StartCoroutine(ShowLine());
         // dialogueText.text = dialogueLines[0];
     }
@@ -103,7 +106,7 @@ public class Mercader : MonoBehaviour
             isDialogueActive = false;
             dialoguePanel.SetActive(false);
             didDialogueStarted = false;
-            player.GetComponent<Movement>().enabled = true;
+            player.GetComponent<Movement>().EnableMovement();
         }
     }
     private IEnumerator ShowLine()
@@ -116,7 +119,7 @@ public class Mercader : MonoBehaviour
         }
         else
         {
-            dialogueImage.sprite = mercaderSprite;
+            dialogueImage.sprite = NPCSprite;
         }
 
         foreach(char letter in dialogueLines[lineIndex].ToCharArray())

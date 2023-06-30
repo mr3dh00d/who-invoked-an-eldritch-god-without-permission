@@ -169,7 +169,14 @@ public class CombatManager : MonoBehaviour
                                         finishAction = true;
                                         break;
                                     case ActionTypes.item:
-                                        actionsManager.setActions(items.ConvertAll(item => $"{item.name}").ToArray());
+                                        if(items.Count > 0)
+                                        {
+                                            actionsManager.setActions(items.ConvertAll(item => $"{item.name}").ToArray());
+                                        }
+                                        else
+                                        {
+                                            actionsManager.setActions(new string[] { "No tienes objetos" });
+                                        }
                                         break;
                                     default:
                                         break;
@@ -194,25 +201,28 @@ public class CombatManager : MonoBehaviour
                                         }
                                         break;
                                     case ActionTypes.item:
-                                        if(!itemSelected)
+                                        if (items.Count > 0)
                                         {
-                                            selectedItem = items[actionsManager.actionSelected];
-                                            itemSelected = true;
-                                            if(selectedItem.effect < 0)
+                                            if(!itemSelected)
                                             {
-                                                actionsManager.setActions(villainsOptions.ConvertAll(villain => $"{villain.name}").ToArray());
+                                                selectedItem = items[actionsManager.actionSelected];
+                                                itemSelected = true;
+                                                if(selectedItem.effect < 0)
+                                                {
+                                                    actionsManager.setActions(villainsOptions.ConvertAll(villain => $"{villain.name}").ToArray());
+                                                }
+                                                else
+                                                {
+                                                    actions.Enqueue(new Action(selectedAction, selectedFighter, null, selectedFighter, selectedItem));
+                                                    finishAction = true;
+                                                }
                                             }
-                                            else
+                                            else if (itemSelected)
                                             {
-                                                actions.Enqueue(new Action(selectedAction, selectedFighter, null, selectedFighter, selectedItem));
+                                                Fighter targetItem = villainsOptions[actionsManager.actionSelected];
+                                                actions.Enqueue(new Action(selectedAction, selectedFighter, null, targetItem, selectedItem));
                                                 finishAction = true;
                                             }
-                                        }
-                                        else if (itemSelected)
-                                        {
-                                            Fighter targetItem = villainsOptions[actionsManager.actionSelected];
-                                            actions.Enqueue(new Action(selectedAction, selectedFighter, null, targetItem, selectedItem));
-                                            finishAction = true;
                                         }
                                         break;
                                     default:

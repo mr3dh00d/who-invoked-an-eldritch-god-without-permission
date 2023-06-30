@@ -17,6 +17,8 @@ public class CambioEscena : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            collision.GetComponent<Animator>().SetFloat("Speed", 0f);
+            collision.GetComponent<Movement>().DisableMovement();
             LoadNextScene();
         }
     }

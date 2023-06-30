@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Monte Ashara Cueva.unity
     guid: 72e80f9e1d5ae2e4da9579ca35b7d4c9
+  - enabled: 1
+    path: Assets/Scenes/Combate Bosque.unity
+    guid: 3de3131ba70111644895639949d14e20
   m_configObjects: {}

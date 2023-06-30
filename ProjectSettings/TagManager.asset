@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Black Image
   - 
   - 
   - 
@@ -40,4 +40,103 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Pasto
+    uniqueID: 621635243
+    locked: 0
+  - name: Camino
+    uniqueID: 1925929973
+    locked: 0
+  - name: Arena
+    uniqueID: 3667525489
+    locked: 0
+  - name: Agua
+    uniqueID: 1224665017
+    locked: 0
+  - name: Relieve
+    uniqueID: 1991897981
+    locked: 0
+  - name: Nenufar
+    uniqueID: 960237861
+    locked: 0
+  - name: Cerca_Atras_Nueva_y_Sola
+    uniqueID: 2202868877
+    locked: 0
+  - name: Cerca_Vertical4
+    uniqueID: 3042752483
+    locked: 0
+  - name: Cerca_Vertical3
+    uniqueID: 1018046121
+    locked: 0
+  - name: Cerca_Vertical5
+    uniqueID: 1118863325
+    locked: 0
+  - name: Arboles_Grandes1_Bosque
+    uniqueID: 886767501
+    locked: 0
+  - name: Arboles_Chiquitos2_Bosque
+    uniqueID: 2180597375
+    locked: 0
+  - name: Arboles_Grandes3_Bosque
+    uniqueID: 1717294465
+    locked: 0
+  - name: Arboles_Grandes2_Bosque
+    uniqueID: 2044952523
+    locked: 0
+  - name: Arboles_Chiuquitos1_Bosque
+    uniqueID: 1990652875
+    locked: 0
+  - name: Arboles_Atras
+    uniqueID: 2450211393
+    locked: 0
+  - name: Casas_Frente
+    uniqueID: 4236308489
+    locked: 0
+  - name: Puente
+    uniqueID: 2424567015
+    locked: 0
+  - name: Arbusto
+    uniqueID: 4260409403
+    locked: 0
+  - name: Mercader_Casa
+    uniqueID: 2576118689
+    locked: 0
+  - name: Cerca
+    uniqueID: 1244114629
+    locked: 0
+  - name: Mercader
+    uniqueID: 1258963911
+    locked: 0
+  - name: Jugador
+    uniqueID: 687459289
+    locked: 0
+  - name: Cerca_Atras
+    uniqueID: 2741648761
+    locked: 0
+  - name: Cerca_Vertical2
+    uniqueID: 3262359151
+    locked: 0
+  - name: Cerca_Verical1
+    uniqueID: 2300689359
+    locked: 0
+  - name: Arboles_Adelante
+    uniqueID: 154189881
+    locked: 0
+  - name: Casas_Espalda
+    uniqueID: 1913243695
+    locked: 0
+  - name: Arboles_Grandes1_Bosque_Adelante
+    uniqueID: 1441762321
+    locked: 0
+  - name: Arboles_Chiquitos2_Bosque_Adelante
+    uniqueID: 1144062497
+    locked: 0
+  - name: Arboles_Grandes3_Bosque_Adelante
+    uniqueID: 364083847
+    locked: 0
+  - name: Arboles_Grandes2_Bosque_Adelante
+    uniqueID: 2064818353
+    locked: 0
+  - name: Arboles_Chiquitos1_Bosque_Adelante
+    uniqueID: 1134203421
     locked: 0

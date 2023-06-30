@@ -504,7 +504,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -862482891
+  m_SortingLayerID: 687459289
   m_SortingLayer: 23
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 76ed4d0c18e86674e97c5d13f60aff68, type: 3}
@@ -608,7 +608,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemigo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5843530919417372580, guid: 10aad0f99a3942140b354c5c153c752f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843530919417372580, guid: 10aad0f99a3942140b354c5c153c752f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843530919417372580, guid: 10aad0f99a3942140b354c5c153c752f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1258963911
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843530919417372580, guid: 10aad0f99a3942140b354c5c153c752f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4366726959328980563, guid: 10aad0f99a3942140b354c5c153c752f, type: 3}
+    - {fileID: 1936746133998959743, guid: 10aad0f99a3942140b354c5c153c752f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 10aad0f99a3942140b354c5c153c752f, type: 3}
 --- !u!1 &1595454840
 GameObject:
@@ -723,7 +741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623002612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0962429, y: 3.5677314, z: -10}
+  m_LocalPosition: {x: -0.6323614, y: 3.5683527, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -839,7 +857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8228831044323775895, guid: 3da1bfd61651b7a4f859fb1831c545ed, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1216947743
+      value: 1224665017
       objectReference: {fileID: 0}
     - target: {fileID: -8228831044323775895, guid: 3da1bfd61651b7a4f859fb1831c545ed, type: 3}
       propertyPath: m_ChunkCullingBounds.x
@@ -895,7 +913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4385800589265821942, guid: 3da1bfd61651b7a4f859fb1831c545ed, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1652153421
+      value: 1991897981
       objectReference: {fileID: 0}
     - target: {fileID: -4385800589265821942, guid: 3da1bfd61651b7a4f859fb1831c545ed, type: 3}
       propertyPath: m_ChunkCullingBounds.x
@@ -911,7 +929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2697718967331786725, guid: 3da1bfd61651b7a4f859fb1831c545ed, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1555757681
+      value: 1925929973
       objectReference: {fileID: 0}
     - target: {fileID: -2697718967331786725, guid: 3da1bfd61651b7a4f859fb1831c545ed, type: 3}
       propertyPath: m_ChunkCullingBounds.x
@@ -971,7 +989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5554417948665649272, guid: 3da1bfd61651b7a4f859fb1831c545ed, type: 3}
       propertyPath: m_SortingLayerID
-      value: -1465349549
+      value: 621635243
       objectReference: {fileID: 0}
     - target: {fileID: 5554417948665649272, guid: 3da1bfd61651b7a4f859fb1831c545ed, type: 3}
       propertyPath: m_ChunkCullingBounds.x
@@ -987,7 +1005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6594431146183149810, guid: 3da1bfd61651b7a4f859fb1831c545ed, type: 3}
       propertyPath: m_SortingLayerID
-      value: -1352562969
+      value: -1553318535
       objectReference: {fileID: 0}
     - target: {fileID: 6594431146183149810, guid: 3da1bfd61651b7a4f859fb1831c545ed, type: 3}
       propertyPath: m_ChunkCullingBounds.x
@@ -1003,7 +1021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8587092569194500111, guid: 3da1bfd61651b7a4f859fb1831c545ed, type: 3}
       propertyPath: m_SortingLayerID
-      value: -717192723
+      value: -627441807
       objectReference: {fileID: 0}
     - target: {fileID: 8587092569194500111, guid: 3da1bfd61651b7a4f859fb1831c545ed, type: 3}
       propertyPath: m_ChunkCullingBounds.x

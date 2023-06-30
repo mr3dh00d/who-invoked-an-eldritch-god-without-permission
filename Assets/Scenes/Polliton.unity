@@ -37310,7 +37310,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12318039, y: -2.7893364}
+  m_Offset: {x: 0.25387573, y: -3.423469}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -37321,7 +37321,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.720146, y: 5.438173}
+  m_Size: {x: 9.474258, y: 6.706438}
   m_EdgeRadius: 0
 --- !u!61 &1362657933
 BoxCollider2D:
@@ -37425,9 +37425,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1362657930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09faeac6f40530b4c939d0ed02fbba70, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ef8944f986434740b18b4a92973f63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AutoStart: 0
+  actionMark: {fileID: 292200059}
+  dialoguePanel: {fileID: 2109293752}
+  typingSpeed: 0.03
+  dialogueLines:
+  - Name: Informante
+    Avatar: {fileID: 21300000, guid: de6adce3963ddda409e4845e958d0d9f, type: 3}
+    Dialogue: "Una vez que salgas de Polliton ya no hay vuelta \xE1tras"
 --- !u!60 &1363486480 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: -438990893164000454, guid: 3cb61bb2e70e5be4db7c8ddf91f9c857, type: 3}

@@ -39,15 +39,15 @@ public class AttackTypes
         switch (name)
         {
             case PollitoTypes.hojita:
-                return new Attack("Hojita de Papel", 10, 3, 2);
+                return new Attack("Hojita de Papel", 10, 0, 2);
             case PollitoTypes.miope:
-                return new Attack("Vista de Aguila", 10, 3, 2);
+                return new Attack("Vista de Aguila", 10, 0, 2);
             case PollitoTypes.payaso:
                 return new Attack("Chiste Racista", 10, Mathf.Infinity, 2);
             case PollitoTypes.lloron:
-                return new Attack("Lagrimas de Cocodrilo", 10, 3, 2);
+                return new Attack("Lagrimas de Cocodrilo", 10, 0, 2);
             default:
-                return new Attack("Golpe Pesado", 10, 3, 2);
+                return new Attack("Golpe Pesado", 10, 0, 2);
         }
     }
 
@@ -56,15 +56,15 @@ public class AttackTypes
         switch (name)
         {
             case PollitoTypes.hojita:
-                return new Attack("Ranitas Unidas", 30, 2, 3);
+                return new Attack("Ranitas Unidas", 30, 0, 3);
             case PollitoTypes.miope:
-                return new Attack("Pullitous Hyatus Promus", 30, 2, 3);
+                return new Attack("Pullitous Hyatus Promus", 30, 0, 3);
             case PollitoTypes.payaso:
-                return new Attack("Lluvia de Confeti", 30, 1, 3);
+                return new Attack("Lluvia de Confeti", 30, 0, 3);
             case PollitoTypes.lloron:
-                return new Attack("Ataque Colorido", 30, 2, 3);
+                return new Attack("Ataque Colorido", 30, 0, 3);
             default:
-                return new Attack("Golpe Poderoso", 30, 2, 3);
+                return new Attack("Golpe Poderoso", 30, 0, 3);
         }
     }
 

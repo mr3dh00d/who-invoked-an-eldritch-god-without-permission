@@ -342,11 +342,13 @@ public class CombatManager : MonoBehaviour
                     if(action.attacker.GetType() == typeof(Hero))
                     {
                         int newLevel = action.attacker.stats.level + 1;
-                        ((Hero)action.attacker).setLevel(newLevel);
-                        if (newLevel >= 3)
-                            events.Enqueue($"{action.attacker.name} ha alcanzado el nivel máximo.");
+                        if (newLevel >= 6)
+                            events.Enqueue($"{action.attacker.name} ya ha alcanzado el nivel máximo.");
                         else
+                        {
+                            ((Hero)action.attacker).setLevel(newLevel);
                             events.Enqueue($"{action.attacker.name} ha subido de nivel.");
+                        }
                     }
                 }
                 if(action.attacker.GetType() == typeof(Hero) && action.attack.uses > 0 && action.attack.uses != Mathf.Infinity)

@@ -8,15 +8,20 @@ public class CambioEscena : MonoBehaviour
     public string escena;
     private Animator transitionAnimator;
 
+    private GameObject Fade;
+
     void Start()
     {
         transitionAnimator = GetComponentInChildren<Animator>();
+        Fade = Helpers.FindChildWithName(gameObject, "Fade");
+        StartCoroutine(DisableFade());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
         {
+            Fade.SetActive(true);
             collision.GetComponent<Animator>().SetFloat("Speed", 0f);
             collision.GetComponent<Movement>().DisableMovement();
             LoadNextScene();
@@ -33,5 +38,12 @@ public class CambioEscena : MonoBehaviour
         transitionAnimator.SetTrigger("StartTransition");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(escena);
+        StartCoroutine(DisableFade());
+    }
+
+    public IEnumerator DisableFade()
+    {
+        yield return new WaitForSeconds(1f);
+        Fade.SetActive(false);
     }
 }

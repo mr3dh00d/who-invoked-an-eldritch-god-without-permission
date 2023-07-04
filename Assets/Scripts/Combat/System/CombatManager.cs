@@ -12,7 +12,7 @@ public class CombatManager : MonoBehaviour
     public GameObject herosPanel;
     public List<Fighter> villains;
     public GameObject villainsPanel;
-    public List<Item> items;
+    private List<Item> items;
     public ActionsManager actionsManager;
     public MessagesManager messagesManager;
     private string[] actionsLabel = new string[] { 
@@ -58,6 +58,7 @@ public class CombatManager : MonoBehaviour
     void Start()
     {
         heros = GameManager.instance.heros;
+        items = GameManager.instance.inventario;
         foreach (Hero hero in heros)
         {
             hero.stats.statsPanel.setUI(Helpers.FindChildWithName(herosPanel, hero.name));
@@ -176,7 +177,7 @@ public class CombatManager : MonoBehaviour
                                     }
                                     else if(villainsAlive == 0)
                                     {
-                                        messagesManager.displayMessage("Has derrotado a los enemigos.");
+                                        int reward = 0;
                                         switch (selectLandLevel)
                                         {
                                             case landOptions.forest:
@@ -184,16 +185,20 @@ public class CombatManager : MonoBehaviour
                                                     villains[GameManager.instance.defeatedEnemiesInForest.Count].name
                                                 );
                                                 GameManager.instance.leveOfForest++;
+                                                reward = Random.Range(15, 25) * villains.Count;
                                                 break;
                                             case landOptions.land:
                                                 GameManager.instance.defeatedEnemiesInLand.Add(
                                                     GameManager.instance.MainEnemyLandName()
                                                 );
                                                 GameManager.instance.leveOfLand++;
+                                                reward = Random.Range(20, 30) * villains.Count;
                                                 break;
                                             default:
                                                 break;
                                         }
+                                        messagesManager.displayMessage("Has derrotado a los enemigos.\nHas ganado " + reward + " semillas.");
+                                        GameManager.instance.semillas += reward;
                                     }
                                     fighting = false;
                                     return;

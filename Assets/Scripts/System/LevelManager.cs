@@ -5,6 +5,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public List<EnemyInLevel> villains;
+
+    public GameObject Fade;
         private enum landOptions
     {
         forest,
@@ -15,6 +17,7 @@ public class LevelManager : MonoBehaviour
     private landOptions selectLandLevel;
     void Start()
     {
+        Fade.SetActive(false);
         List<string> enemies;
         switch (selectLandLevel)
         {

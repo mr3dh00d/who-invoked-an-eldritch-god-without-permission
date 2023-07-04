@@ -47,6 +47,7 @@ public class EntrarEnCombate : MonoBehaviour {
 
     public IEnumerator SceneLoad()
     {
+        Fade.SetActive(true);
         if(fadeAnimator != null) fadeAnimator.SetTrigger("StartTransition");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(escena);

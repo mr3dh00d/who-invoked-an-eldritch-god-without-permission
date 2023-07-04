@@ -6,7 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public int semillas;
+
     public List<Fighter> heros;
+
+    public List<Item> inventario;
 
     public Vector2 lastPosition = Vector2.zero;
     public int leveOfForest = 1;
@@ -23,6 +27,7 @@ public class GameManager : MonoBehaviour
             {
                 heros.Add(child.GetComponent<Fighter>());
             }
+            semillas = 300;
             DontDestroyOnLoad(gameObject);
         }
         else

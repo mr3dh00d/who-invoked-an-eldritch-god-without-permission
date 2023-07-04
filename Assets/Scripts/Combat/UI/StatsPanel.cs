@@ -11,7 +11,7 @@ using TMPro;
     private TextMeshProUGUI Name;
     private TextMeshProUGUI HealthLabel;
     private TextMeshProUGUI LevelLabel;
-
+    private bool showHealthNumber = true;
     private bool isUIset = false;
 
     public void setUI(GameObject Panel)
@@ -67,7 +67,17 @@ using TMPro;
         }
         Health.GetComponent<Slider>().value = currentHealth / maxHealth;
         Health.transform.GetChild(1).GetComponentInChildren<Image>().color = ColorUtility.TryParseHtmlString(color, out Color newColor) ? newColor : Color.black;
-        HealthLabel.text = $"{currentHealth} / {maxHealth}";
+        if(showHealthNumber) HealthLabel.text = $"{currentHealth} / {maxHealth}";
+    }
+
+    public void disabledHealthNumber()
+    {
+        showHealthNumber = false;
+    }
+
+    public void enabledHealthNumber()
+    {
+        showHealthNumber = true;
     }
 
     public Image getAvatar()

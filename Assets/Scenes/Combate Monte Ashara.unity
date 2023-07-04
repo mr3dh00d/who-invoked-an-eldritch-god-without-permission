@@ -3090,9 +3090,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1510665444630505083, guid: b85059896dc4f014fa2c1893d1293c2d, type: 3}
   m_PrefabInstance: {fileID: 624378864}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &624378866 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1510665444116694136, guid: b85059896dc4f014fa2c1893d1293c2d, type: 3}
+--- !u!1 &624378866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1510665444116694138, guid: b85059896dc4f014fa2c1893d1293c2d, type: 3}
   m_PrefabInstance: {fileID: 624378864}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &626422452
@@ -5258,20 +5258,13 @@ MonoBehaviour:
   villains:
   - {fileID: 1031781409}
   villainsPanel: {fileID: 1175191569}
-  items:
-  - name: Larbas
-    effect: 5
-  - name: Huevo
-    effect: -5
-  - name: Posion
-    effect: 10
   actionsManager:
     actionsPanel: {fileID: 2113991165}
     actionSelected: 0
   messagesManager:
     messagesPanel: {fileID: 593107069}
     messageEvent: {fileID: 1656632089}
-  fadeAnimator: {fileID: 624378866}
+  Fade: {fileID: 624378866}
   ExitScene: Inicio
   selectLandLevel: 2
 --- !u!4 &1656632088

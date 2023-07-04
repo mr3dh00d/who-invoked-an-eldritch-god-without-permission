@@ -44,7 +44,7 @@ public class Objetos : MonoBehaviour
                 GameManager.instance.inventario.Add(new Item(nombreObjeto.text, 5));
                 break;
             case "Huevitos":
-                GameManager.instance.inventario.Add(new Item(nombreObjeto.text, -5));
+                GameManager.instance.inventario.Add(new Item(nombreObjeto.text, -10));
                 break;
             default:
                 break;

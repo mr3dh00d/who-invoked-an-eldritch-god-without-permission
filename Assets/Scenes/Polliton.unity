@@ -37351,7 +37351,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.5
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -37375,7 +37375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21399307, y: 0.5205195, z: -10}
+  m_LocalPosition: {x: 1.4908085, y: 0.52006197, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42884,8 +42884,8 @@ MonoBehaviour:
   dialogueLines:
   - Name: Informante
     Avatar: {fileID: 21300000, guid: de6adce3963ddda409e4845e958d0d9f, type: 3}
-    Dialogue: "Una ves que cruces este camino ya no hay vuelta \xE1tras. \xA1Buena
-      suerte!"
+    Dialogue: "\xA1Bienvenido, viajero! Ten en cuenta que cuando salgas de Polliton,
+      no habr\xE1 vuelta atr\xE1s. \xA1Adelante con valent\xEDa!"
 --- !u!60 &1363486480 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: -438990893164000454, guid: 3cb61bb2e70e5be4db7c8ddf91f9c857, type: 3}

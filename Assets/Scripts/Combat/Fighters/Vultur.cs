@@ -27,16 +27,16 @@ public class Vultur : Enemy
         switch (level)
         {
             case 1:
-                base.setStats(35, 5, 1);
+                base.setStats(40, 5, 1);
                 break;
             case 2:
-                base.setStats(40, 5, 2);
+                base.setStats(50, 5, 2);
                 heavy = base.getAttacks().Find(a => a.level == 2);
                 if(heavy != null)
                     heavy.maxUses = 3;
                 break;
             default:
-                base.setStats(45, 5, 3);
+                base.setStats(60, 5, 3);
                 heavy = base.getAttacks().Find(a => a.level == 2);
                 if(heavy != null)
                     heavy.maxUses = 3;

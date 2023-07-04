@@ -22,7 +22,7 @@ public class CluckNThulu : Enemy
     public override void setLevel(int level)
     {
         base.getStats().level = level;
-        base.setStats(75, 5, 1);       
+        base.setStats(200, 5, 1);       
     }
     
 }

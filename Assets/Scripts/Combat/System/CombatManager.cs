@@ -38,7 +38,7 @@ public class CombatManager : MonoBehaviour
     private bool fighting;
     private Queue<Action> actions;
     private Queue<string> events;
-    public Animator fadeAnimator;
+    public GameObject Fade;
     public string ExitScene;
 
     private enum landOptions
@@ -62,6 +62,11 @@ public class CombatManager : MonoBehaviour
         foreach (Hero hero in heros)
         {
             hero.stats.statsPanel.setUI(Helpers.FindChildWithName(herosPanel, hero.name));
+            hero.attacks = hero.attacks.ConvertAll(attack => {
+                Attack newAttack = attack.Clone();
+                newAttack.uses = 0;
+                return newAttack;
+            });
             hero.setLevel(hero.stats.level);
 
         }
@@ -83,6 +88,7 @@ public class CombatManager : MonoBehaviour
                 case landOptions.mountain:
                     villain.setLevel(1);
                     villain.getStats().statsPanel.setLevelUI("???");
+                    villain.getStats().statsPanel.disabledHealthNumber();
                     break;
                 default:
                     break;
@@ -418,7 +424,7 @@ public class CombatManager : MonoBehaviour
                     if(action.attacker.GetType() == typeof(Hero))
                     {
                         int newLevel = action.attacker.stats.level + 1;
-                        if (newLevel >= 6)
+                        if (newLevel > 6)
                             events.Enqueue($"{action.attacker.name} ya ha alcanzado el nivel máximo.");
                         else
                         {
@@ -429,7 +435,9 @@ public class CombatManager : MonoBehaviour
                 }
                 if(action.attack.level > 1)
                 {
-                    action.attack.uses++;
+                    if(action.attacker is Hero){
+                        action.attack.uses++;
+                    }
                     events.Enqueue($"{action.attacker.name} ha usado {action.attack.name}.\nLe quedan {action.attack.maxUses - action.attack.uses} usos.");
                 }
                 if(action.attacker is Enemy)
@@ -478,23 +486,68 @@ public class CombatManager : MonoBehaviour
         foreach (Fighter villain in villains)
         {
             if(villain.stats.getHealth() > 0){
-                villain.setIsDefending(false);
-                List<Fighter> targets = heros.FindAll(hero => hero.stats.getHealth() > 0);
-                List<Attack> attackOptions = villain.attacks.FindAll(attack => attack.uses < attack.maxUses || attack.maxUses == Mathf.Infinity);
-                actions.Enqueue(
-                    new Action(
-                        ActionTypes.attack,
-                        villain,
-                        attackOptions[Random.Range(0, attackOptions.Count)],
-                        targets[Random.Range(0, targets.Count)]
-                    )
-                );
+                if(villain is Poseido)
+                {
+                    villain.setIsDefending(false);
+                    List<Fighter> targets = heros.FindAll(hero => hero.stats.getHealth() > 0);
+                    List<Attack> attackOptions = villain.attacks.FindAll(attack => attack.uses < attack.maxUses || attack.maxUses == Mathf.Infinity);
+                    Attack selectedAttack = attackOptions[Random.Range(0, attackOptions.Count)];
+                    selectedAttack.uses++;
+                    actions.Enqueue(
+                        new Action(
+                            ActionTypes.attack,
+                            villain,
+                            selectedAttack,
+                            targets[Random.Range(0, targets.Count)]
+                        )
+                    );
+                }
+                else if (villain is Vultur)
+                {
+                    villain.setIsDefending(false);
+                    List<Fighter> targets = heros.FindAll(hero => hero.stats.getHealth() > 0);
+                    for (int i = 0; i < 2; i++)
+                    {
+                        List<Attack> attackOptions = villain.attacks.FindAll(attack => attack.uses < attack.maxUses || attack.maxUses == Mathf.Infinity);
+                        Attack selectedAttack = attackOptions[Random.Range(0, attackOptions.Count)];
+                        selectedAttack.uses++;
+                        actions.Enqueue(
+                            new Action(
+                                ActionTypes.attack,
+                                villain,
+                                selectedAttack,
+                                targets[Random.Range(0, targets.Count)]
+                            )
+                        );
+                    }   
+                }
+                else if(villain is CluckNThulu)
+                {
+                    villain.setIsDefending(false);
+                    List<Fighter> targets = heros.FindAll(hero => hero.stats.getHealth() > 0);
+                    foreach (Hero target in targets)
+                    {
+                        List<Attack> attackOptions = villain.attacks.FindAll(attack => attack.uses < attack.maxUses || attack.maxUses == Mathf.Infinity);
+                        Attack selectedAttack = attackOptions[Random.Range(0, attackOptions.Count)];
+                        selectedAttack.uses++;
+                        actions.Enqueue(
+                            new Action(
+                                ActionTypes.attack,
+                                villain,
+                                selectedAttack,
+                                target
+                            )
+                        );
+                    }
+                }
             }
         }
     }
 
     public IEnumerator SceneLoad()
     {
+        Fade.SetActive(true);
+        Animator fadeAnimator = Fade.GetComponent<Animator>();
         if(fadeAnimator != null) fadeAnimator.SetTrigger("StartTransition");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(ExitScene);

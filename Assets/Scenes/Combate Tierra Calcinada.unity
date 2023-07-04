@@ -6822,7 +6822,7 @@ MonoBehaviour:
   messagesManager:
     messagesPanel: {fileID: 593107069}
     messageEvent: {fileID: 1656632089}
-  fadeAnimator: {fileID: 89058761}
+  Fade: {fileID: 1175191569}
   ExitScene: Tierra Calcinada
   selectLandLevel: 1
 --- !u!4 &1656632088

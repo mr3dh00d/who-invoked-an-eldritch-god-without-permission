@@ -136,5 +136,10 @@ public class NPCChat : MonoBehaviour
             yield return new WaitForSecondsRealtime(typingSpeed);
         }
     }
+
+    public bool GetIsDialogueActive()
+    {
+        return isDialogueActive;
+    }
     
 }

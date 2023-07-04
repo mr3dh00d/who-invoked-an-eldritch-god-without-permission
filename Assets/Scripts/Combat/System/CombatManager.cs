@@ -1,13 +1,17 @@
 using System.Collections;
+using System.Reflection;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
 public class CombatManager : MonoBehaviour
 {
-    public List<Fighter> heroes;
+    private List<Fighter> heros;
+    public GameObject herosPanel;
     public List<Fighter> villains;
+    public GameObject villainsPanel;
     public List<Item> items;
     public ActionsManager actionsManager;
     public MessagesManager messagesManager;
@@ -16,7 +20,7 @@ public class CombatManager : MonoBehaviour
         ActionTypes.defense, 
         ActionTypes.item,
     };
-    private List<Fighter> heroesOptions;
+    private List<Fighter> herosOptions;
     private List<Fighter> villainsOptions;
     private bool fighterSelected;
     private Fighter selectedFighter;
@@ -34,6 +38,17 @@ public class CombatManager : MonoBehaviour
     private bool fighting;
     private Queue<Action> actions;
     private Queue<string> events;
+    public Animator fadeAnimator;
+    public string ExitScene;
+
+    private enum landOptions
+    {
+        forest,
+        land,
+        mountain
+    }
+    [SerializeField]
+    private landOptions selectLandLevel;
 
 
 
@@ -42,25 +57,56 @@ public class CombatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        heros = GameManager.instance.heros;
+        foreach (Hero hero in heros)
+        {
+            hero.stats.statsPanel.setUI(Helpers.FindChildWithName(herosPanel, hero.name));
+            hero.setLevel(hero.stats.level);
+
+        }
+        foreach (Enemy villain in villains)
+        {
+            villain.stats.statsPanel.setUI(Helpers.FindChildWithName(villainsPanel, villain.name));
+            switch (selectLandLevel)
+            {
+                case landOptions.forest:
+                    villain.setLevel(GameManager.instance.leveOfForest);
+                    break;
+                case landOptions.land:
+                    villain.setLevel(GameManager.instance.leveOfLand);
+                    if(villain is Vultur)
+                    {
+                        villain.getStats().statsPanel.setName(GameManager.instance.MainEnemyLandName());
+                    }
+                    break;
+                case landOptions.mountain:
+                    villain.setLevel(1);
+                    villain.getStats().statsPanel.setLevelUI("???");
+                    break;
+                default:
+                    break;
+            }
+        }
         actionsManager.iniciar();
         messagesManager.sayBattleIntro();
         actions = new Queue<Action>();
         events = new Queue<string>();
         fighting = true;
         playersTurn = true;
-        // foreach (Fighter hero in heroes)
-        // {
-        //     foreach (Attack attack in hero.attacks)
-        //     {
-        //         attack.uses = attack.maxUses;
-        //     }
-        // }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (fighting){
+        if(!fighting)
+        {
+            if (Input.GetKeyDown("z"))
+            {
+                StartCoroutine(SceneLoad());        
+            }
+        }
+        if (fighting)
+        {
             if(!messagesManager.getIsTyping())
             {
                 if (Input.GetKeyDown("z"))
@@ -80,7 +126,7 @@ public class CombatManager : MonoBehaviour
                                 actions = new Queue<Action>();
                                 events = new Queue<string>();
                                 // Actions = new Dictionary<Fighter, Action>();
-                                heroesOptions = heroes.FindAll(hero => {
+                                herosOptions = heros.FindAll(hero => {
                                     if(hero.getIsDefending())
                                     {
                                         hero.setIsDefending(false);
@@ -88,13 +134,13 @@ public class CombatManager : MonoBehaviour
                                     return hero.stats.getHealth() > 0;
                                 });
                                 villainsOptions = villains.FindAll(villain => {
-                                    Image image = villain.stats.statsPanel.Image;
+                                    Image image = villain.stats.statsPanel.getAvatar();
                                     if(image){
                                         image.GetComponent<Animator>().SetBool("Turno", false);
                                     }
                                     return villain.stats.getHealth() > 0;
                                 });
-                                actionsManager.setActions(heroesOptions.ConvertAll(hero => $"Pollito {hero.name}").ToArray());
+                                actionsManager.setActions(herosOptions.ConvertAll(hero => $"Pollito {hero.name}").ToArray());
                                 GetComponent<ActionEvent>().enabled = true;
                             }
                             else if(doingActions)
@@ -120,13 +166,35 @@ public class CombatManager : MonoBehaviour
                             }
                             else
                             {
-                                int heroesAlive = heroes.FindAll(hero => hero.stats.getHealth() > 0).Count;
+                                int herosAlive = heros.FindAll(hero => hero.stats.getHealth() > 0).Count;
                                 int villainsAlive = villains.FindAll(villain => villain.stats.getHealth() > 0).Count;
-                                if(heroesAlive == 0 || villainsAlive == 0)
+                                if(herosAlive == 0 || villainsAlive == 0)
                                 {
-                                    messagesManager.displayMessage(
-                                        heroesAlive == 0 ? "Has sido derrotado." : "Has derrotado a los enemigos."
-                                    );
+                                    if(herosAlive == 0)
+                                    {
+                                        messagesManager.displayMessage("Has sido derrotado.");
+                                    }
+                                    else if(villainsAlive == 0)
+                                    {
+                                        messagesManager.displayMessage("Has derrotado a los enemigos.");
+                                        switch (selectLandLevel)
+                                        {
+                                            case landOptions.forest:
+                                                GameManager.instance.defeatedEnemiesInForest.Add(
+                                                    villains[GameManager.instance.defeatedEnemiesInForest.Count].name
+                                                );
+                                                GameManager.instance.leveOfForest++;
+                                                break;
+                                            case landOptions.land:
+                                                GameManager.instance.defeatedEnemiesInLand.Add(
+                                                    GameManager.instance.MainEnemyLandName()
+                                                );
+                                                GameManager.instance.leveOfLand++;
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    }
                                     fighting = false;
                                     return;
                                 }
@@ -149,19 +217,19 @@ public class CombatManager : MonoBehaviour
                     {
                         if(!fighterSelected)
                         {
-                            selectedFighter = heroesOptions[actionsManager.actionSelected];
+                            selectedFighter = herosOptions[actionsManager.actionSelected];
                             actionsManager.setActions(actionsLabel);
                             fighterSelected = true;
                         }
                         else if (fighterSelected)
                         {
-                            attackOptions = selectedFighter.attacks.FindAll(attack => attack.uses > 0);
                             if(!actionSelected){
                                 selectedAction = actionsLabel[actionsManager.actionSelected];
                                 actionSelected = true;
                                 switch (selectedAction)
                                 {
                                     case ActionTypes.attack:
+                                        attackOptions = selectedFighter.attacks.FindAll(attack => attack.uses < attack.maxUses || attack.maxUses == Mathf.Infinity);
                                         actionsManager.setActions(attackOptions.ConvertAll(attack => $"{attack.name} ({attack.damage} de daño)").ToArray());
                                         break;
                                     case ActionTypes.defense:
@@ -239,10 +307,10 @@ public class CombatManager : MonoBehaviour
                             itemSelected = false;
                             finishAction = false;
                             attackSelected = false;
-                            heroesOptions.Remove(selectedFighter);
+                            herosOptions.Remove(selectedFighter);
                             items.Remove(selectedItem);
-                            actionsManager.setActions(heroesOptions.ConvertAll(hero => $"Pollito {hero.name}").ToArray());
-                            if (heroesOptions.Count == 0)
+                            actionsManager.setActions(herosOptions.ConvertAll(hero => $"Pollito {hero.name}").ToArray());
+                            if (herosOptions.Count == 0)
                             {
                                 actionsManager.actionsPanel.SetActive(false);
                                 GetComponent<ActionEvent>().enabled = false;
@@ -260,7 +328,7 @@ public class CombatManager : MonoBehaviour
                         if(fighterSelected)
                         {
                             if(!actionSelected){
-                                actionsManager.setActions(heroesOptions.ConvertAll(hero => $"Pollito {hero.name}").ToArray());
+                                actionsManager.setActions(herosOptions.ConvertAll(hero => $"Pollito {hero.name}").ToArray());
                                 fighterSelected = false;
                             }
                             else if (actionSelected)
@@ -318,6 +386,8 @@ public class CombatManager : MonoBehaviour
         {
             case ActionTypes.attack:
                 // Caso especial de pollito Payaso
+                bool isDead = action.target.stats.getHealth() <= 0;
+                Debug.Log($"{action.target.name} esta muerto? {isDead}");
                 float damageTaken = 0;
                 if(action.attacker.name == PollitoTypes.payaso && action.attack.level == 2)
                 {
@@ -336,7 +406,8 @@ public class CombatManager : MonoBehaviour
                 messagesManager.displayMessage(
                     AttackTypes.attackMessage(action.attacker, attack, action.target)
                 );
-                if (action.target.stats.getHealth() <= 0)
+                Debug.Log($"{action.target.name} tiene {action.target.stats.getHealth()} de vida");
+                if (!isDead && action.target.stats.getHealth() <= 0)
                 {
                     events.Enqueue($"{action.target.name} ha sido derrotado.");
                     if(action.attacker.GetType() == typeof(Hero))
@@ -351,14 +422,14 @@ public class CombatManager : MonoBehaviour
                         }
                     }
                 }
-                if(action.attacker.GetType() == typeof(Hero) && action.attack.uses > 0 && action.attack.uses != Mathf.Infinity)
+                if(action.attack.level > 1)
                 {
-                    action.attack.uses--;
-                    events.Enqueue($"{action.attacker.name} ha usado {action.attack.name}.\nLe quedan {action.attack.uses} usos.");
+                    action.attack.uses++;
+                    events.Enqueue($"{action.attacker.name} ha usado {action.attack.name}.\nLe quedan {action.attack.maxUses - action.attack.uses} usos.");
                 }
-                if(action.attacker.GetType() == typeof(Enemy))
+                if(action.attacker is Enemy)
                 {
-                    Image image = action.attacker.stats.statsPanel.Image;
+                    Image image = action.attacker.stats.statsPanel.getAvatar();
                     if(image){
                         image.GetComponent<Animator>().SetBool("Turno", true);
                     }
@@ -403,18 +474,25 @@ public class CombatManager : MonoBehaviour
         {
             if(villain.stats.getHealth() > 0){
                 villain.setIsDefending(false);
-                List<Fighter> targets = heroes.FindAll(hero => hero.stats.getHealth() > 0);
+                List<Fighter> targets = heros.FindAll(hero => hero.stats.getHealth() > 0);
+                List<Attack> attackOptions = villain.attacks.FindAll(attack => attack.uses < attack.maxUses || attack.maxUses == Mathf.Infinity);
                 actions.Enqueue(
                     new Action(
                         ActionTypes.attack,
                         villain,
-                        villain.attacks[Random.Range(0, villain.attacks.Count)],
+                        attackOptions[Random.Range(0, attackOptions.Count)],
                         targets[Random.Range(0, targets.Count)]
                     )
                 );
-                // actions.Enqueue(new Action(ActionTypes.attack, villain, villain.attacks[0], heroes[Random.Range(0, heroes.Count)]));
             }
         }
+    }
+
+    public IEnumerator SceneLoad()
+    {
+        if(fadeAnimator != null) fadeAnimator.SetTrigger("StartTransition");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(ExitScene);
     }
 
     

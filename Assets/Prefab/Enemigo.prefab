@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4366726959328980563}
   - component: {fileID: 1936746133998959743}
   - component: {fileID: 1804685455656339320}
+  - component: {fileID: 7630622593369277600}
+  - component: {fileID: 1559325788925789087}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: Untagged
@@ -75,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1397518113
-  m_SortingLayer: 22
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bc39b62aa17b9b94089b5c4cda599c8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -161,6 +163,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 13.148737, y: 29.399239}
   m_EdgeRadius: 0
+--- !u!114 &7630622593369277600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580728925169028800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 875a8886cdd99fd449937f98be3eacce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escena: Combate Tierra Calcinada
+  Fade: {fileID: 0}
+--- !u!114 &1559325788925789087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580728925169028800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef8944f986434740b18b4a92973f63d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoStart: 1
+  actionMark: {fileID: 0}
+  dialoguePanel: {fileID: 0}
+  typingSpeed: 0.03
+  dialogueLines:
+  - Name: Ramphus
+    Avatar: {fileID: 21300000, guid: 7dd6628ad9e8be84e93c5f22f3af7a1d, type: 3}
+    Dialogue: asdasdasdasdasdasasdads
 --- !u!1001 &651755255777909890
 PrefabInstance:
   m_ObjectHideFlags: 0

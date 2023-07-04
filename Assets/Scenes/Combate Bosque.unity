@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 65234982}
   - component: {fileID: 65234983}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,11 +572,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     level: 1
-    statsPanel:
-      Slider: {fileID: 1357545978}
-      Image: {fileID: 1782901226}
-      HealthLabel: {fileID: 1187706000}
-      LevelLabel: {fileID: 1202312080}
   attacks: []
 --- !u!1 &186856419
 GameObject:
@@ -802,7 +797,7 @@ GameObject:
   - component: {fileID: 202710331}
   - component: {fileID: 202710333}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -821,11 +816,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1337563320}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 62.781}
+  m_AnchoredPosition: {x: 0, y: 62.78099}
   m_SizeDelta: {x: 274.4343, y: 274.4373}
   m_Pivot: {x: 0.5, y: 0.50000024}
 --- !u!114 &202710331
@@ -898,7 +893,7 @@ GameObject:
   - component: {fileID: 205806018}
   - component: {fileID: 205806019}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2065,7 +2060,7 @@ GameObject:
   - component: {fileID: 422828192}
   - component: {fileID: 422828191}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2084,7 +2079,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 963626091}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2162,7 +2157,7 @@ GameObject:
   - component: {fileID: 437344562}
   - component: {fileID: 437344561}
   m_Layer: 5
-  m_Name: Panel Payaso
+  m_Name: Payaso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2488,11 +2483,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     level: 1
-    statsPanel:
-      Slider: {fileID: 2019488682}
-      Image: {fileID: 488842360}
-      HealthLabel: {fileID: 592384814}
-      LevelLabel: {fileID: 584676183}
   attacks: []
 --- !u!1 &488842358
 GameObject:
@@ -2506,7 +2496,7 @@ GameObject:
   - component: {fileID: 488842361}
   - component: {fileID: 488842360}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3218,7 +3208,7 @@ RectTransform:
   - {fileID: 701486244}
   - {fileID: 1303108849}
   m_Father: {fileID: 1337563320}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -3288,7 +3278,7 @@ GameObject:
   - component: {fileID: 584676184}
   - component: {fileID: 584676183}
   m_Layer: 5
-  m_Name: LevelText
+  m_Name: LevelLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3423,7 +3413,7 @@ GameObject:
   - component: {fileID: 592384815}
   - component: {fileID: 592384814}
   m_Layer: 5
-  m_Name: Health
+  m_Name: HealthLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3963,6 +3953,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1510665444630505083, guid: b85059896dc4f014fa2c1893d1293c2d, type: 3}
   m_PrefabInstance: {fileID: 624378864}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &624378866 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1510665444116694136, guid: b85059896dc4f014fa2c1893d1293c2d, type: 3}
+  m_PrefabInstance: {fileID: 624378864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &626422452
 GameObject:
   m_ObjectHideFlags: 0
@@ -4291,16 +4286,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 773727410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9122604b2f271e44a41eda15c1424bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 33fef5c3bfdf2824ab0a0af476b732a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
     level: 1
-    statsPanel:
-      Slider: {fileID: 572945419}
-      Image: {fileID: 202710331}
-      HealthLabel: {fileID: 500120041}
-      LevelLabel: {fileID: 700497116}
   attacks: []
 --- !u!1 &797185154
 GameObject:
@@ -4562,7 +4552,7 @@ GameObject:
   - component: {fileID: 963626093}
   - component: {fileID: 963626092}
   m_Layer: 5
-  m_Name: Panel Villain (1)
+  m_Name: Kakashi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4580,8 +4570,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 422828190}
   - {fileID: 1520669692}
+  - {fileID: 422828190}
   - {fileID: 441227076}
   - {fileID: 198913056}
   - {fileID: 1558614509}
@@ -4719,7 +4709,7 @@ GameObject:
   - component: {fileID: 1043007628}
   - component: {fileID: 1043007627}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5065,7 +5055,7 @@ GameObject:
   - component: {fileID: 1100234917}
   - component: {fileID: 1100234916}
   m_Layer: 5
-  m_Name: Panel Miope
+  m_Name: Miope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5320,7 +5310,7 @@ GameObject:
   - component: {fileID: 1187706001}
   - component: {fileID: 1187706000}
   m_Layer: 5
-  m_Name: Health
+  m_Name: HealthLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5455,7 +5445,7 @@ GameObject:
   - component: {fileID: 1202312081}
   - component: {fileID: 1202312080}
   m_Layer: 5
-  m_Name: LevelText
+  m_Name: LevelLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5627,7 +5617,7 @@ GameObject:
   - component: {fileID: 1337563322}
   - component: {fileID: 1337563321}
   m_Layer: 5
-  m_Name: Panel Villain (2)
+  m_Name: TikiTiki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5645,8 +5635,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 202710329}
   - {fileID: 572945420}
+  - {fileID: 202710329}
   - {fileID: 500120040}
   - {fileID: 700497115}
   - {fileID: 103901232}
@@ -5707,7 +5697,7 @@ GameObject:
   - component: {fileID: 1357545979}
   - component: {fileID: 1357545980}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5798,7 +5788,7 @@ GameObject:
   - component: {fileID: 1400439782}
   - component: {fileID: 1400439781}
   m_Layer: 5
-  m_Name: LevelText
+  m_Name: LevelLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5933,7 +5923,7 @@ GameObject:
   - component: {fileID: 1415142982}
   - component: {fileID: 1415142981}
   m_Layer: 5
-  m_Name: Panel Villain
+  m_Name: Kokosho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6043,16 +6033,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1471140276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9122604b2f271e44a41eda15c1424bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 33fef5c3bfdf2824ab0a0af476b732a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
     level: 1
-    statsPanel:
-      Slider: {fileID: 1520669691}
-      Image: {fileID: 422828192}
-      HealthLabel: {fileID: 441227077}
-      LevelLabel: {fileID: 198913057}
   attacks: []
 --- !u!1 &1482172051
 GameObject:
@@ -6162,7 +6147,7 @@ RectTransform:
   - {fileID: 1565741053}
   - {fileID: 593179228}
   m_Father: {fileID: 963626091}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -6266,11 +6251,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     level: 1
-    statsPanel:
-      Slider: {fileID: 205806017}
-      Image: {fileID: 1043007627}
-      HealthLabel: {fileID: 2097634740}
-      LevelLabel: {fileID: 1400439781}
   attacks: []
 --- !u!1 &1529288464
 GameObject:
@@ -6819,7 +6799,7 @@ GameObject:
   - component: {fileID: 1641856069}
   - component: {fileID: 1641856068}
   m_Layer: 5
-  m_Name: Health
+  m_Name: HealthLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6973,15 +6953,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352ae175c9e61e54b8a3de0d33adc541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroes:
-  - {fileID: 183223340}
-  - {fileID: 447187436}
-  - {fileID: 1521504822}
-  - {fileID: 2065295261}
+  herosPanel: {fileID: 1770691544}
   villains:
   - {fileID: 1471140278}
   - {fileID: 1717716896}
   - {fileID: 773727412}
+  villainsPanel: {fileID: 1175191569}
   items:
   - name: Larbas
     effect: 5
@@ -6995,6 +6972,9 @@ MonoBehaviour:
   messagesManager:
     messagesPanel: {fileID: 593107069}
     messageEvent: {fileID: 1656632089}
+  fadeAnimator: {fileID: 624378866}
+  ExitScene: Bosque del Trotamundos
+  selectLandLevel: 0
 --- !u!4 &1656632088
 Transform:
   m_ObjectHideFlags: 0
@@ -7087,7 +7067,7 @@ GameObject:
   - component: {fileID: 1674292734}
   - component: {fileID: 1674292733}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7221,7 +7201,7 @@ GameObject:
   - component: {fileID: 1692203307}
   - component: {fileID: 1692203306}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7540,16 +7520,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1717716894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9122604b2f271e44a41eda15c1424bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 33fef5c3bfdf2824ab0a0af476b732a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
     level: 1
-    statsPanel:
-      Slider: {fileID: 271102257}
-      Image: {fileID: 1674292734}
-      HealthLabel: {fileID: 1075651762}
-      LevelLabel: {fileID: 540324063}
   attacks: []
 --- !u!1 &1722952278
 GameObject:
@@ -7723,7 +7698,7 @@ GameObject:
   - component: {fileID: 1758296118}
   - component: {fileID: 1758296117}
   m_Layer: 5
-  m_Name: LevelText
+  m_Name: LevelLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8058,7 +8033,7 @@ GameObject:
   - component: {fileID: 1782901227}
   - component: {fileID: 1782901226}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8210,7 +8185,7 @@ GameObject:
   - component: {fileID: 1848971116}
   - component: {fileID: 1848971115}
   m_Layer: 5
-  m_Name: Panel Hojita
+  m_Name: Hojita
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8618,7 +8593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1976345095
 Transform:
   m_ObjectHideFlags: 0
@@ -8686,7 +8661,7 @@ GameObject:
   - component: {fileID: 2019488683}
   - component: {fileID: 2019488684}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8901,11 +8876,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     level: 1
-    statsPanel:
-      Slider: {fileID: 65234981}
-      Image: {fileID: 1692203306}
-      HealthLabel: {fileID: 1641856068}
-      LevelLabel: {fileID: 1758296117}
   attacks: []
 --- !u!1 &2080700720
 GameObject:
@@ -8919,7 +8889,7 @@ GameObject:
   - component: {fileID: 2080700723}
   - component: {fileID: 2080700722}
   m_Layer: 5
-  m_Name: Panel Lloron
+  m_Name: Lloron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9076,7 +9046,7 @@ GameObject:
   - component: {fileID: 2097634741}
   - component: {fileID: 2097634740}
   m_Layer: 5
-  m_Name: Health
+  m_Name: HealthLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

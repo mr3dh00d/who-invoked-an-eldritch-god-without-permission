@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Combate Bosque.unity
     guid: 3de3131ba70111644895639949d14e20
+  - enabled: 1
+    path: Assets/Scenes/Combate Tierra Calcinada.unity
+    guid: 89f85210fdf029240bf709dc51583854
+  - enabled: 1
+    path: Assets/Scenes/Combate Monte Ashara.unity
+    guid: 696a84815ae74904b9ff25e56b786f12
   m_configObjects: {}

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class TypingText : MonoBehaviour
@@ -15,28 +16,27 @@ public class TypingText : MonoBehaviour
     [SerializeField] private GameObject PanelTexto;
     [SerializeField] private TMP_Text DialogueText;
     [SerializeField, TextArea(4,6)] private string[] dialogueLines;
-    
+    public string escena;
+
     private bool didDialogueStart;
     private float typingTime = 0.05f;
     private int lineIndex;
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        
+        if(!didDialogueStart)
         {
-            if(!didDialogueStart)
-            {
-                StartDialogue();
-            }
-            else if(DialogueText.text == dialogueLines[lineIndex] && Input.GetKey("z"))
-            {
-                NextDialogueLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                DialogueText.text = dialogueLines[lineIndex];
-            }
+            StartDialogue();
+        }
+        else if(DialogueText.text == dialogueLines[lineIndex] && Input.GetKey("z"))
+        {
+            NextDialogueLine();
+        }
+        else if(Input.GetButtonDown("Fire1"))
+        {
+            StopAllCoroutines();
+            DialogueText.text = dialogueLines[lineIndex];
         }
     }
 
@@ -98,6 +98,7 @@ public class TypingText : MonoBehaviour
             didDialogueStart = false;
             Imagen8.SetActive(false);
             PanelTexto.SetActive(false);
+            SceneManager.LoadScene(escena);
         }
     }
 

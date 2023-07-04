@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c11632a7e6a634288c1cfd34531cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escena: Polliton
+  escena: Historia
 --- !u!114 &1178676380
 MonoBehaviour:
   m_ObjectHideFlags: 0

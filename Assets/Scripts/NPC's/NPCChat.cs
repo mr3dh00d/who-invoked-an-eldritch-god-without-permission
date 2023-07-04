@@ -9,6 +9,7 @@ public class NPCChat : MonoBehaviour
     [SerializeField] private bool AutoStart;
     [SerializeField] private GameObject actionMark;
     [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private GameObject shopPanel;
     [SerializeField] private float typingSpeed = 0.03f;
     [SerializeField] public List<NPCDialogue> dialogueLines;
     private NPCDialogue actualDialogue;
@@ -123,6 +124,7 @@ public class NPCChat : MonoBehaviour
             isDialogueActive = false;
             dialoguePanel.SetActive(false);
             didDialogueStarted = false;
+            shopPanel.SetActive(true);
             player.GetComponent<Movement>().EnableMovement();
         }
     }

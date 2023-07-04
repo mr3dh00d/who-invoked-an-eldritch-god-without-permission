@@ -958,6 +958,7 @@ MonoBehaviour:
   - 'Los pollitos quedaron algo asustados y traumatizados, pero estaban seguros de
     algo: No podian dejar solo a Pollito tanque. Decidido esto plantearon la mision
     de rescate y fueron al rescate de su buen amigo.'
+  escena: Polliton
 --- !u!114 &882509221
 MonoBehaviour:
   m_ObjectHideFlags: 0

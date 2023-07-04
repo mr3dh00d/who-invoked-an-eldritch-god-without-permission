@@ -4,39 +4,49 @@ using UnityEngine;
 
 public class Enemy : Fighter
 {
-    public void Start()
-    {
-        base.attacks.Add(
-            new Attack("Picotazo", 7, Mathf.Infinity, 1)
-        );
-        setLevel(base.stats.level);
-        
-    }
 
-    public void setLevel(int level)
+    public void Update()
     {
-        base.stats.level = level;
-        switch (level)
+        if(Input.GetKeyDown(KeyCode.Backslash))
         {
-            case 1:
-                base.stats.setStats(25, 5, 1);
-                break;
-            case 2:
-                base.stats.setStats(50, 5, 2);
-                break;
-            default:
-                base.stats.setStats(75, 5, 3);
-                break;
+            base.stats.setHealth(0);
         }
-
-        if(level >= 2)
-            base.attacks.Add(
-                new Attack("Placaje", 10, 3, 2)
-            );
-        if(level >= 3)
-            base.attacks.Add(
-                new Attack("Brecha Oscura", 20, 3, 3)
-            );
     }
+
+    public virtual void setLevel(int level)
+    {
+
+    }
+
+    public int getLevel()
+    {
+        return base.stats.level;
+    }
+
+    public void setStats(int health, int defense, int level)
+    {
+        base.stats.setStats(health, defense, level);
+    }
+
+    public Stats getStats()
+    {
+        return base.stats;
+    }
+
+    public void setHealth(int health)
+    {
+        base.stats.setHealth(health);
+    }
+
+    public void addAttack(Attack attack)
+    {
+        base.attacks.Add(attack);
+    }
+
+    public List<Attack> getAttacks()
+    {
+        return base.attacks;
+    }
+
     
 }

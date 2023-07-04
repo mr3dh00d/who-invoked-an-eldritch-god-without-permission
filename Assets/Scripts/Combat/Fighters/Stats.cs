@@ -16,8 +16,11 @@ using UnityEngine;
         this.defense = defense;
         this.level = level;
         currentHealth = maxHealth;
-        statsPanel.setLevelUI(level);
-        statsPanel.setHealthUI(currentHealth, maxHealth);
+        if (statsPanel.getIsUIset())
+        {
+            statsPanel.setHealthUI(currentHealth, maxHealth);
+            statsPanel.setLevelUI(level);
+        }
     }
     public void setHealth(float health)
     {
@@ -33,7 +36,12 @@ using UnityEngine;
         {
             currentHealth = health;
         }
-        statsPanel.setHealthUI(currentHealth, maxHealth);
+        if (statsPanel.getIsUIset()) statsPanel.setHealthUI(currentHealth, maxHealth);
+    }
+
+    public float getMaxHealth()
+    {
+        return maxHealth;
     }
     public float getHealth()
     {

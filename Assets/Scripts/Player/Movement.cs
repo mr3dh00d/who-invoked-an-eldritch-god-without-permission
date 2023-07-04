@@ -12,10 +12,16 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         Debug.Log("Movement script is working");
         rb = GetComponent<Rigidbody2D>();
         playerAnimation = GetComponent<Animator>();
         movementEnabled = true;
+        if(GameManager.instance.lastPosition != Vector2.zero)
+        {
+            transform.position = GameManager.instance.lastPosition;
+            GameManager.instance.lastPosition = Vector2.zero;
+        }
     }
 
     // Update is called once per frame

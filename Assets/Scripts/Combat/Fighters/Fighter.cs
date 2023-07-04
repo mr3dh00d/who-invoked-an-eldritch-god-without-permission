@@ -9,12 +9,6 @@ public class Fighter : MonoBehaviour
     public List<Attack> attacks;
     private bool isDefending = false;
 
-    public void Update() {
-        if(Input.GetKeyDown("space")){
-            stats.setHealth(stats.getHealth() - Random.Range(0, 5));
-        }
-    }
-
     // public float getAttack()
     // {
     //     return 0f;

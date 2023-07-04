@@ -43,7 +43,7 @@ public class AttackTypes
             case PollitoTypes.miope:
                 return new Attack("Vista de Aguila", 10, 0, 2);
             case PollitoTypes.payaso:
-                return new Attack("Chiste Racista", 10, Mathf.Infinity, 2);
+                return new Attack("Chiste Racista", 10, 0, 2);
             case PollitoTypes.lloron:
                 return new Attack("Lagrimas de Cocodrilo", 10, 0, 2);
             default:

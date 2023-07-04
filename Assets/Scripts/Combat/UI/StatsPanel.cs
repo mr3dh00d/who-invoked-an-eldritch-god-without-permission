@@ -6,12 +6,40 @@ using TMPro;
 
 [System.Serializable] public class StatsPanel
 {
-    public GameObject Slider;
-    public Image Image;
-    public TextMeshProUGUI HealthLabel;
-    public TextMeshProUGUI LevelLabel;
+    private GameObject Health;
+    private Image Avatar;
+    private TextMeshProUGUI Name;
+    private TextMeshProUGUI HealthLabel;
+    private TextMeshProUGUI LevelLabel;
+
+    private bool isUIset = false;
+
+    public void setUI(GameObject Panel)
+    {
+        Health = Helpers.FindChildWithName(Panel, "Health").gameObject;
+        Avatar = Helpers.FindChildWithName(Panel, "Avatar").GetComponent<Image>();
+        Name = Helpers.FindChildWithName(Panel, "Name").GetComponent<TextMeshProUGUI>();
+        HealthLabel = Helpers.FindChildWithName(Panel, "HealthLabel").GetComponent<TextMeshProUGUI>();
+        LevelLabel = Helpers.FindChildWithName(Panel, "LevelLabel").GetComponent<TextMeshProUGUI>();
+        isUIset = true;
+    }
+
+    public bool getIsUIset()
+    {
+        return isUIset;
+    }
+
+    public void setName(string name)
+    {
+        Name.text = name;
+    }
 
     public void setLevelUI(int level)
+    {
+        LevelLabel.text = $"Nv. {level}";
+    }
+
+    public void setLevelUI(string level)
     {
         LevelLabel.text = $"Nv. {level}";
     }
@@ -22,8 +50,8 @@ using TMPro;
         if (currentHealth == 0f)
         {
             color = ColorTypes.healthNone;
-            Image.GetComponent<Image>().color = ColorUtility.TryParseHtmlString("#FFFFFFA0", out Color nc) ? nc : Color.black;
-            Animator animator = Image.GetComponent<Animator>();
+            Avatar.GetComponent<Image>().color = ColorUtility.TryParseHtmlString("#FFFFFFA0", out Color nc) ? nc : Color.black;
+            Animator animator = Avatar.GetComponent<Animator>();
             if (animator != null)
             {
                 animator.enabled = false;
@@ -37,9 +65,14 @@ using TMPro;
         {
             color = ColorTypes.healthYellow;
         }
-        Slider.GetComponent<Slider>().value = currentHealth / maxHealth;
-        Slider.transform.GetChild(1).GetComponentInChildren<Image>().color = ColorUtility.TryParseHtmlString(color, out Color newColor) ? newColor : Color.black;
+        Health.GetComponent<Slider>().value = currentHealth / maxHealth;
+        Health.transform.GetChild(1).GetComponentInChildren<Image>().color = ColorUtility.TryParseHtmlString(color, out Color newColor) ? newColor : Color.black;
         HealthLabel.text = $"{currentHealth} / {maxHealth}";
+    }
+
+    public Image getAvatar()
+    {
+        return Avatar;
     }
 
 }

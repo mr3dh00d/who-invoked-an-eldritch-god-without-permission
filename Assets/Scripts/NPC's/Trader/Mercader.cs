@@ -9,6 +9,7 @@ public class Mercader : MonoBehaviour
     [SerializeField] private Sprite playerSprite;
     [SerializeField] private Sprite NPCSprite;
     [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private GameObject shopPanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Image dialogueImage;
     [SerializeField, TextArea(4,6)] private string[] dialogueLines;
@@ -106,6 +107,7 @@ public class Mercader : MonoBehaviour
             isDialogueActive = false;
             dialoguePanel.SetActive(false);
             didDialogueStarted = false;
+            shopPanel.SetActive(true);
             player.GetComponent<Movement>().EnableMovement();
         }
     }

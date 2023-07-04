@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Combate Bosque.unity
     guid: 3de3131ba70111644895639949d14e20
+  - enabled: 1
+    path: Assets/Scenes/Historia.unity
+    guid: e4cf68bec2bb6e34d96f2fc2c2851dea
   m_configObjects: {}

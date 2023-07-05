@@ -43585,6 +43585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526873680}
   - component: {fileID: 1526873681}
+  - component: {fileID: 1526873682}
   m_Layer: 5
   m_Name: Volumen
   m_TagString: Untagged
@@ -43678,6 +43679,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1526873682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526873679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be519826104708b4f9f90dfb0024b0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &1527455330 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 1593712951188044374, guid: 3cb61bb2e70e5be4db7c8ddf91f9c857, type: 3}

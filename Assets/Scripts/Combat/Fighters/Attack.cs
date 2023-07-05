@@ -18,7 +18,7 @@ using UnityEngine;
         this.damage = damage;
         this.level = level;
         this.maxUses = maxUses;
-        this.uses = maxUses;
+        this.uses = 0;
     }
 
     public Attack Clone()

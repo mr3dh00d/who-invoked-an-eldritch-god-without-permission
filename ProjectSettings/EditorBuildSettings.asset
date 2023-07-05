@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Historia.unity
     guid: e4cf68bec2bb6e34d96f2fc2c2851dea
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: 8f0e22b26556cf74c9aecc35f3634a57
   m_configObjects: {}

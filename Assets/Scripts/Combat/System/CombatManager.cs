@@ -39,6 +39,8 @@ public class CombatManager : MonoBehaviour
     private Queue<Action> actions;
     private Queue<string> events;
     public GameObject Fade;
+    private bool playerWin;
+    public string LoseScene;
     public string ExitScene;
 
     private enum landOptions
@@ -88,7 +90,6 @@ public class CombatManager : MonoBehaviour
                 case landOptions.mountain:
                     villain.setLevel(1);
                     villain.getStats().statsPanel.setLevelUI("???");
-                    villain.getStats().statsPanel.disabledHealthNumber();
                     break;
                 default:
                     break;
@@ -100,6 +101,38 @@ public class CombatManager : MonoBehaviour
         events = new Queue<string>();
         fighting = true;
         playersTurn = true;
+    }
+
+    private void setUpPlayerTurn()
+    {
+        playersTurn = true;
+        doingActions = false;
+        messagesManager.messagesPanel.SetActive(false);
+        actionsManager.actionsPanel.SetActive(true);
+        fighterSelected = false;
+        actionSelected = false;
+        itemSelected = false;
+        finishAction = false;
+        doingActions = false;
+        actions = new Queue<Action>();
+        events = new Queue<string>();
+        // Actions = new Dictionary<Fighter, Action>();
+        herosOptions = heros.FindAll(hero => {
+            if(hero.getIsDefending())
+            {
+                hero.setIsDefending(false);
+            }
+            return hero.stats.getHealth() > 0;
+        });
+        villainsOptions = villains.FindAll(villain => {
+            Image image = villain.stats.statsPanel.getAvatar();
+            if(image){
+                image.GetComponent<Animator>().SetBool("Turno", false);
+            }
+            return villain.stats.getHealth() > 0;
+        });
+        actionsManager.setActions(herosOptions.ConvertAll(hero => $"Pollito {hero.name}").ToArray());
+        GetComponent<ActionEvent>().enabled = true;
     }
 
     // Update is called once per frame
@@ -122,33 +155,7 @@ public class CombatManager : MonoBehaviour
                     {
                         if(playersTurn){
                             if(!doingActions){
-                                messagesManager.messagesPanel.SetActive(false);
-                                actionsManager.actionsPanel.SetActive(true);
-                                playersTurn = true;
-                                fighterSelected = false;
-                                actionSelected = false;
-                                itemSelected = false;
-                                finishAction = false;
-                                doingActions = false;
-                                actions = new Queue<Action>();
-                                events = new Queue<string>();
-                                // Actions = new Dictionary<Fighter, Action>();
-                                herosOptions = heros.FindAll(hero => {
-                                    if(hero.getIsDefending())
-                                    {
-                                        hero.setIsDefending(false);
-                                    }
-                                    return hero.stats.getHealth() > 0;
-                                });
-                                villainsOptions = villains.FindAll(villain => {
-                                    Image image = villain.stats.statsPanel.getAvatar();
-                                    if(image){
-                                        image.GetComponent<Animator>().SetBool("Turno", false);
-                                    }
-                                    return villain.stats.getHealth() > 0;
-                                });
-                                actionsManager.setActions(herosOptions.ConvertAll(hero => $"Pollito {hero.name}").ToArray());
-                                GetComponent<ActionEvent>().enabled = true;
+                                setUpPlayerTurn();
                             }
                             else if(doingActions)
                             {
@@ -160,6 +167,14 @@ public class CombatManager : MonoBehaviour
                                 {
                                     doActions();
                                 }
+                                else
+                                {
+                                    EnemyTurn();
+                                    doingActions = true;
+                                    playersTurn = false;
+                                    events.Enqueue("Los enemigos se preparan para atacar.");
+                                    doEvents();
+                                }
                             }
                         }
                         else 
@@ -168,6 +183,7 @@ public class CombatManager : MonoBehaviour
                             {
                                 EnemyTurn();
                                 doingActions = true;
+                                playersTurn = false;
                                 events.Enqueue("Los enemigos se preparan para atacar.");
                                 doEvents();
                             }
@@ -179,10 +195,12 @@ public class CombatManager : MonoBehaviour
                                 {
                                     if(herosAlive == 0)
                                     {
+                                        playerWin = false;
                                         messagesManager.displayMessage("Has sido derrotado.");
                                     }
                                     else if(villainsAlive == 0)
                                     {
+                                        playerWin = true;
                                         int reward = 0;
                                         switch (selectLandLevel)
                                         {
@@ -216,10 +234,8 @@ public class CombatManager : MonoBehaviour
                                 else if(actions.Count > 0)
                                 {
                                     doActions();
-                                }
-                                else
-                                {
-                                    playersTurn = true;
+                                } else {
+                                    setUpPlayerTurn();
                                 }
                             }
                         }
@@ -392,80 +408,84 @@ public class CombatManager : MonoBehaviour
     public void doActions()
     {
         messagesManager.messagesPanel.SetActive(true);
-        Action action = actions.Dequeue();
-        switch (action.type)
+        if(actions.Count > 0)
         {
-            case ActionTypes.attack:
-                // Caso especial de pollito Payaso
-                bool isDead = action.target.stats.getHealth() <= 0;
-                Debug.Log($"{action.target.name} esta muerto? {isDead}");
-                float damageTaken = 0;
-                if(action.attacker.name == PollitoTypes.payaso && action.attack.level == 2)
-                {
-                    damageTaken = action.target.takeDamage(0);
-                }
-                else if(action.attacker.name == PollitoTypes.payaso && action.attack.level == 3)
-                {
-                    damageTaken = action.target.takeDamage(Random.Range(40, 60));
-                }
-                else
-                {
-                    damageTaken = action.target.takeDamage(action.attack.damage);
-                }
-                Attack attack = action.attack.Clone();
-                attack.damage = damageTaken;
-                messagesManager.displayMessage(
-                    AttackTypes.attackMessage(action.attacker, attack, action.target)
-                );
-                Debug.Log($"{action.target.name} tiene {action.target.stats.getHealth()} de vida");
-                if (!isDead && action.target.stats.getHealth() <= 0)
-                {
-                    events.Enqueue($"{action.target.name} ha sido derrotado.");
-                    if(action.attacker.GetType() == typeof(Hero))
+            Action action = actions.Dequeue();
+            switch (action.type)
+            {
+                case ActionTypes.attack:
+                    // Caso especial de pollito Payaso
+                    bool isDead = action.target.stats.getHealth() <= 0;
+                    float damageTaken = 0;
+                    if(action.attacker.name == PollitoTypes.payaso && action.attack.level == 2)
                     {
-                        int newLevel = action.attacker.stats.level + 1;
-                        if (newLevel > 6)
-                            events.Enqueue($"{action.attacker.name} ya ha alcanzado el nivel máximo.");
-                        else
+                        damageTaken = action.target.takeDamage(0);
+                    }
+                    else if(action.attacker.name == PollitoTypes.payaso && action.attack.level == 3)
+                    {
+                        damageTaken = action.target.takeDamage(Random.Range(40, 60));
+                    }
+                    else
+                    {
+                        damageTaken = action.target.takeDamage(action.attack.damage);
+                    }
+                    Attack attack = action.attack.Clone();
+                    attack.damage = damageTaken;
+                    messagesManager.displayMessage(
+                        AttackTypes.attackMessage(action.attacker, attack, action.target)
+                    );
+                    Debug.Log($"{action.target.name} tiene {action.target.stats.getHealth()} de vida");
+                    if (!isDead && action.target.stats.getHealth() <= 0)
+                    {
+                        Debug.Log($"{action.target.name} ha sido derrotado.");
+                        events.Enqueue($"{action.target.name} ha sido derrotado.");
+                        if(action.attacker.GetType() == typeof(Hero))
                         {
-                            ((Hero)action.attacker).setLevel(newLevel);
-                            events.Enqueue($"{action.attacker.name} ha subido de nivel.");
+                            int newLevel = action.attacker.stats.level + 1;
+                            if (newLevel > 6)
+                                events.Enqueue($"{action.attacker.name} ya ha alcanzado el nivel máximo.");
+                            else
+                            {
+                                ((Hero)action.attacker).setLevel(newLevel);
+                                events.Enqueue($"{action.attacker.name} ha subido de nivel.");
+                            }
                         }
                     }
-                }
-                if(action.attack.level > 1)
-                {
-                    if(action.attacker is Hero){
-                        action.attack.uses++;
+                    if(action.attack.level > 1)
+                    {
+                        if(action.attacker is Hero){
+                            action.attack.uses++;
+                        }
+                        events.Enqueue($"{action.attacker.name} ha usado {action.attack.name}.\nLe quedan {action.attack.maxUses - action.attack.uses} usos.");
                     }
-                    events.Enqueue($"{action.attacker.name} ha usado {action.attack.name}.\nLe quedan {action.attack.maxUses - action.attack.uses} usos.");
-                }
-                if(action.attacker is Enemy)
-                {
-                    Image image = action.attacker.stats.statsPanel.getAvatar();
-                    if(image){
-                        image.GetComponent<Animator>().SetBool("Turno", true);
+                    if(action.attacker is Enemy)
+                    {
+                        Image image = action.attacker.stats.statsPanel.getAvatar();
+                        if(image){
+                            image.GetComponent<Animator>().SetBool("Turno", true);
+                        }
                     }
-                }
-                break;
-            case ActionTypes.defense:
-                action.attacker.setIsDefending(true);
-                messagesManager.displayMessage(
-                    DefenseTypes.defenseMessage(action.attacker)
-                );
-                break;
-            case ActionTypes.item:
-                action.target.stats.setHealth(action.target.stats.getHealth() + action.item.effect);
-                messagesManager.displayMessage(
-                    action.item.effect < 0
-                    ? $"{PollitoTypes.pollito} {action.attacker.name} le lanzo un huevazo a {action.target.name} y recibe {-1*action.item.effect} de daño."
-                    : $"{action.target.name} ha recuperado {action.item.effect} de salud por usar {action.item.name}."
-                );
-                break;
-            default:
-                break;
+                    break;
+                case ActionTypes.defense:
+                    action.attacker.setIsDefending(true);
+                    messagesManager.displayMessage(
+                        DefenseTypes.defenseMessage(action.attacker)
+                    );
+                    break;
+                case ActionTypes.item:
+                    action.target.stats.setHealth(action.target.stats.getHealth() + action.item.effect);
+                    messagesManager.displayMessage(
+                        action.item.effect < 0
+                        ? $"{PollitoTypes.pollito} {action.attacker.name} le lanzo un huevazo a {action.target.name} y recibe {-1*action.item.effect} de daño."
+                        : $"{action.target.name} ha recuperado {action.item.effect} de salud por usar {action.item.name}."
+                    );
+                    break;
+                default:
+                    break;
+            }
+
         }
-        if(actions.Count == 0)
+        if(actions.Count == 0 && events.Count == 0)
         {
             doingActions = false;
             playersTurn = !playersTurn;
@@ -528,6 +548,7 @@ public class CombatManager : MonoBehaviour
                     foreach (Hero target in targets)
                     {
                         List<Attack> attackOptions = villain.attacks.FindAll(attack => attack.uses < attack.maxUses || attack.maxUses == Mathf.Infinity);
+                        Debug.Log("Posibles ataques: " + attackOptions.Count);
                         Attack selectedAttack = attackOptions[Random.Range(0, attackOptions.Count)];
                         selectedAttack.uses++;
                         actions.Enqueue(
@@ -550,7 +571,9 @@ public class CombatManager : MonoBehaviour
         Animator fadeAnimator = Fade.GetComponent<Animator>();
         if(fadeAnimator != null) fadeAnimator.SetTrigger("StartTransition");
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(ExitScene);
+        SceneManager.LoadScene(
+            playerWin ? ExitScene : LoseScene
+        );
     }
 
     

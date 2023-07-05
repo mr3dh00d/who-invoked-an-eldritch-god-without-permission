@@ -16,13 +16,14 @@ public class CluckNThulu : Enemy
             new Attack("Tormenta Primigenia", 30, 2, 3)
         );
         setLevel(base.stats.level);
+        base.stats.statsPanel.disabledHealthNumber();
         
     }
 
     public override void setLevel(int level)
     {
         base.getStats().level = level;
-        base.setStats(200, 5, 1);       
+        base.setStats(450, 5, 1);       
     }
     
 }

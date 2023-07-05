@@ -1855,105 +1855,11 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 1330681599290271118, guid: f3f163e768befeb448a3461300f80dbd, type: 3}
   m_PrefabInstance: {fileID: 863661927}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &346457995
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 346457996}
-  - component: {fileID: 346457997}
-  m_Layer: 0
-  m_Name: Payaso
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &346457996
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346457995}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1826951582}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &346457997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346457995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a2b5b22cc21f741a3259dc30d3a001, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats:
-    level: 1
-  attacks: []
 --- !u!60 &349831939 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: -476370026598743094, guid: f3f163e768befeb448a3461300f80dbd, type: 3}
   m_PrefabInstance: {fileID: 863661927}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &356796768
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 356796769}
-  - component: {fileID: 356796770}
-  m_Layer: 0
-  m_Name: Lloron
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &356796769
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356796768}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1826951582}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &356796770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356796768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a2b5b22cc21f741a3259dc30d3a001, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats:
-    level: 1
-  attacks: []
 --- !u!60 &362948158 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: -2387902696237199220, guid: f3f163e768befeb448a3461300f80dbd, type: 3}
@@ -2391,53 +2297,6 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: -4876122821773936207, guid: f3f163e768befeb448a3461300f80dbd, type: 3}
   m_PrefabInstance: {fileID: 863661927}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &472829003
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 472829004}
-  - component: {fileID: 472829005}
-  m_Layer: 0
-  m_Name: Miope
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &472829004
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 472829003}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1826951582}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &472829005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 472829003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a2b5b22cc21f741a3259dc30d3a001, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats:
-    level: 1
-  attacks: []
 --- !u!60 &476541325 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 6596662511279815069, guid: f3f163e768befeb448a3461300f80dbd, type: 3}
@@ -4284,59 +4143,6 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 3178529463061465921, guid: f3f163e768befeb448a3461300f80dbd, type: 3}
   m_PrefabInstance: {fileID: 863661927}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &789387046
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 789387048}
-  - component: {fileID: 789387047}
-  m_Layer: 0
-  m_Name: GameManager (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &789387047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789387046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99ed36edc9cad84428d89e3c2da7fcc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  semillas: 0
-  heros: []
-  inventario: []
-  lastPosition: {x: 0, y: 0}
-  leveOfForest: 1
-  defeatedEnemiesInForest: []
-  leveOfLand: 1
-  defeatedEnemiesInLand: []
---- !u!4 &789387048
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789387046}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 890.8024, y: 542.93176, z: -225.02438}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1826951582}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &795481572 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: -1762074133466487216, guid: f3f163e768befeb448a3461300f80dbd, type: 3}
@@ -32601,6 +32407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1277831151}
   - component: {fileID: 1277831152}
+  - component: {fileID: 1277831153}
   m_Layer: 5
   m_Name: Volumen
   m_TagString: Untagged
@@ -32694,6 +32501,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1277831153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277831150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be519826104708b4f9f90dfb0024b0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &1281932178 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: -3326308660309095430, guid: f3f163e768befeb448a3461300f80dbd, type: 3}
@@ -34587,53 +34406,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538924183}
   m_CullTransparentMesh: 1
---- !u!1 &1541233871
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1541233872}
-  - component: {fileID: 1541233873}
-  m_Layer: 0
-  m_Name: Hojita
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1541233872
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541233871}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1826951582}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1541233873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541233871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a2b5b22cc21f741a3259dc30d3a001, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats:
-    level: 1
-  attacks: []
 --- !u!60 &1541957829 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 3649969078405973959, guid: f3f163e768befeb448a3461300f80dbd, type: 3}
@@ -35770,41 +35542,6 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: -6136051195253002984, guid: f3f163e768befeb448a3461300f80dbd, type: 3}
   m_PrefabInstance: {fileID: 863661927}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1826951581
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1826951582}
-  m_Layer: 0
-  m_Name: Heros
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1826951582
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826951581}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -890.17, y: -542.2117, z: 230.69629}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1541233872}
-  - {fileID: 472829004}
-  - {fileID: 346457996}
-  - {fileID: 356796769}
-  m_Father: {fileID: 789387048}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1837627229 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 5863596513518115287, guid: f3f163e768befeb448a3461300f80dbd, type: 3}

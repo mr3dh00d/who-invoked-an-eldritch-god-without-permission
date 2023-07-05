@@ -7187,6 +7187,7 @@ MonoBehaviour:
     messagesPanel: {fileID: 593107069}
     messageEvent: {fileID: 1656632089}
   Fade: {fileID: 896022767}
+  LoseScene: Bosque del Trotamundos
   ExitScene: Bosque del Trotamundos
   selectLandLevel: 0
 --- !u!4 &1656632088

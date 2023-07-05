@@ -5265,6 +5265,7 @@ MonoBehaviour:
     messagesPanel: {fileID: 593107069}
     messageEvent: {fileID: 1656632089}
   Fade: {fileID: 624378866}
+  LoseScene: Monte Ashara Cueva
   ExitScene: Final
   selectLandLevel: 2
 --- !u!4 &1656632088

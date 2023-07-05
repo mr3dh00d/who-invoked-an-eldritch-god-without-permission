@@ -5,6 +5,13 @@ using UnityEngine.Audio;
 
 public class MenuOpciones : MonoBehaviour
 {
+    public void Update()
+    {
+        if (audioMixer != null)
+        {
+            audioMixer.SetFloat("Volumen", AudioManager.Instance.volumen);
+        }
+    }
 
     [SerializeField] private AudioMixer audioMixer;
 
@@ -15,6 +22,6 @@ public class MenuOpciones : MonoBehaviour
 
     public void CambiarVolumen(float volumen)
     {
-        audioMixer.SetFloat("Volumen", volumen);
+        AudioManager.Instance.volumen = volumen;
     }
 }

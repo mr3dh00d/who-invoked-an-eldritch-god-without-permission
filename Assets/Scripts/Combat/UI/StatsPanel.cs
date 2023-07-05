@@ -67,7 +67,11 @@ using TMPro;
         }
         Health.GetComponent<Slider>().value = currentHealth / maxHealth;
         Health.transform.GetChild(1).GetComponentInChildren<Image>().color = ColorUtility.TryParseHtmlString(color, out Color newColor) ? newColor : Color.black;
-        if(showHealthNumber) HealthLabel.text = $"{currentHealth} / {maxHealth}";
+        if(showHealthNumber){
+            HealthLabel.text = $"{currentHealth} / {maxHealth}";
+        }else{
+            HealthLabel.text = "";
+        }
     }
 
     public void disabledHealthNumber()

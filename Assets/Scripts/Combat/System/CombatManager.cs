@@ -285,7 +285,7 @@ public class CombatManager : MonoBehaviour
                                         if(!attackSelected)
                                         {
                                             attackSelected = true;
-                                            selectedAttack = selectedFighter.attacks[actionsManager.actionSelected];
+                                            selectedAttack = attackOptions[actionsManager.actionSelected];
                                             actionsManager.setActions(villainsOptions.ConvertAll(villain => $"{villain.name}").ToArray());
                                         }
                                         else if (attackSelected)
@@ -411,11 +411,12 @@ public class CombatManager : MonoBehaviour
         if(actions.Count > 0)
         {
             Action action = actions.Dequeue();
+            bool isDead;
             switch (action.type)
             {
                 case ActionTypes.attack:
                     // Caso especial de pollito Payaso
-                    bool isDead = action.target.stats.getHealth() <= 0;
+                    isDead = action.target.stats.getHealth() <= 0;
                     float damageTaken = 0;
                     if(action.attacker.name == PollitoTypes.payaso && action.attack.level == 2)
                     {
@@ -473,12 +474,28 @@ public class CombatManager : MonoBehaviour
                     );
                     break;
                 case ActionTypes.item:
+                    isDead = action.target.stats.getHealth() <= 0;
                     action.target.stats.setHealth(action.target.stats.getHealth() + action.item.effect);
                     messagesManager.displayMessage(
                         action.item.effect < 0
                         ? $"{PollitoTypes.pollito} {action.attacker.name} le lanzo un huevazo a {action.target.name} y recibe {-1*action.item.effect} de daño."
                         : $"{action.target.name} ha recuperado {action.item.effect} de salud por usar {action.item.name}."
                     );
+                    if (!isDead && action.target.stats.getHealth() <= 0)
+                    {
+                        events.Enqueue($"{action.target.name} ha sido derrotado.");
+                        if(action.attacker.GetType() == typeof(Hero))
+                        {
+                            int newLevel = action.attacker.stats.level + 1;
+                            if (newLevel > 6)
+                                events.Enqueue($"{action.attacker.name} ya ha alcanzado el nivel máximo.");
+                            else
+                            {
+                                ((Hero)action.attacker).setLevel(newLevel);
+                                events.Enqueue($"{action.attacker.name} ha subido de nivel.");
+                            }
+                        }
+                    }
                     break;
                 default:
                     break;

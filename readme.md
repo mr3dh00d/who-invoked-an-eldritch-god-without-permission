@@ -1,4 +1,6 @@
-# Proyecto TDE II - Juego de Combate por Turnos
+# Who Invoked an Eldritch God Without Permission?
+
+## Proyecto TDE II - Juego de Combate por Turnos
 
 Este repositorio contiene el código fuente y los recursos para el proyecto "Proyecto TDE II", un videojuego de combate por turnos desarrollado para el ramo "Tópicos de especialidad II" en la Universidad Andres Bello.
 
